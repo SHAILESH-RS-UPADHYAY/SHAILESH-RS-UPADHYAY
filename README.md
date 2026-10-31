@@ -91,3 +91,7 @@ Resolves DNS, reads the TLS certificate and headers, matches signatures and cite
     </td>
   </tr>
 </table>
+
+<br>
+
+<sub>Python, SQL, Linux and the cloud on the backend. TypeScript and Node for tools like the three above.</sub>
