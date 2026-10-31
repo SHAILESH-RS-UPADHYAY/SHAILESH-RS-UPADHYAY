@@ -32,7 +32,7 @@ Parses JavaScript, TypeScript and Python imports, finds cycles with Tarjan's alg
   </picture>
 </a>
 
-Resolves DNS, reads the TLS certificate and headers, matches signatures and cites an exhibit for every finding. The fetcher only connects to vetted public addresses, so it can't be pointed at a private network. [Code](https://github.com/SHAILESH-RS-UPADHYAY/autopsy)
+Resolves DNS, reads the TLS certificate and headers, matches signatures and cites an exhibit for every finding. The fetcher only connects to vetted public addresses, so it can't be pointed at a private network. [Live](https://autopsy-casefile.vercel.app) and [code](https://github.com/SHAILESH-RS-UPADHYAY/autopsy)
 
 <br>
 
