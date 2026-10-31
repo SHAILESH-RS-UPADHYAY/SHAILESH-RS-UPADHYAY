@@ -104,3 +104,5 @@ Resolves DNS, reads the TLS certificate and headers, matches signatures and cite
 <br>
 
 <sub>Python, SQL, Linux and the cloud on the backend. TypeScript and Node for tools like the three above.</sub>
+
+<sub>Say hello on <a href="https://www.linkedin.com/in/shailesh-upadhyay-6a112624a">LinkedIn</a>.</sub>
