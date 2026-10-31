@@ -33,3 +33,61 @@ Parses JavaScript, TypeScript and Python imports, finds cycles with Tarjan's alg
 </a>
 
 Resolves DNS, reads the TLS certificate and headers, matches signatures and cites an exhibit for every finding. The fetcher only connects to vetted public addresses, so it can't be pointed at a private network. [Code](https://github.com/SHAILESH-RS-UPADHYAY/autopsy)
+
+<br>
+
+### Elsewhere on GitHub
+
+<table>
+  <tr>
+    <td width="33%" valign="top">
+      <a href="https://github.com/SHAILESH-RS-UPADHYAY/radar"><img src="assets/icons/radar.svg" width="48" height="48" alt=""></a><br>
+      <b><a href="https://github.com/SHAILESH-RS-UPADHYAY/radar">RADAR</a></b><br>
+      <sub>AI job intelligence engine. Scrapes 50+ career pages and matches openings to your resume with embeddings.</sub>
+    </td>
+    <td width="33%" valign="top">
+      <a href="https://github.com/SHAILESH-RS-UPADHYAY/autoflow"><img src="assets/icons/autoflow.svg" width="48" height="48" alt=""></a><br>
+      <b><a href="https://github.com/SHAILESH-RS-UPADHYAY/autoflow">AutoFlow</a></b><br>
+      <sub>GenAI workflow automation.</sub>
+    </td>
+    <td width="33%" valign="top">
+      <a href="https://github.com/SHAILESH-RS-UPADHYAY/webvory-scalable-analytics-engine"><img src="assets/icons/webvory-scalable-analytics-engine.svg" width="48" height="48" alt=""></a><br>
+      <b><a href="https://github.com/SHAILESH-RS-UPADHYAY/webvory-scalable-analytics-engine">Analytics Dashboard API</a></b><br>
+      <sub>Ingests 1.3 million e-commerce records and serves analytics in under two seconds.</sub>
+    </td>
+  </tr>
+  <tr>
+    <td width="33%" valign="top">
+      <a href="https://github.com/SHAILESH-RS-UPADHYAY/devine-cdc"><img src="assets/icons/devine-cdc.svg" width="48" height="48" alt=""></a><br>
+      <b><a href="https://github.com/SHAILESH-RS-UPADHYAY/devine-cdc">Devine CDC</a></b><br>
+      <sub>Platform for a pediatric therapy clinic.</sub>
+    </td>
+    <td width="33%" valign="top">
+      <a href="https://github.com/SHAILESH-RS-UPADHYAY/simplify-money-backend"><img src="assets/icons/simplify-money-backend.svg" width="48" height="48" alt=""></a><br>
+      <b><a href="https://github.com/SHAILESH-RS-UPADHYAY/simplify-money-backend">Simplify Money</a></b><br>
+      <sub>Gold investment AI backend.</sub>
+    </td>
+    <td width="33%" valign="top">
+      <a href="https://github.com/SHAILESH-RS-UPADHYAY/iota-address-parser"><img src="assets/icons/iota-address-parser.svg" width="48" height="48" alt=""></a><br>
+      <b><a href="https://github.com/SHAILESH-RS-UPADHYAY/iota-address-parser">Iota Address Parser</a></b><br>
+      <sub>ML prototype that turns raw address strings into structured JSON.</sub>
+    </td>
+  </tr>
+  <tr>
+    <td width="33%" valign="top">
+      <a href="https://github.com/SHAILESH-RS-UPADHYAY/finance-dashboard-backend"><img src="assets/icons/finance-dashboard-backend.svg" width="48" height="48" alt=""></a><br>
+      <b><a href="https://github.com/SHAILESH-RS-UPADHYAY/finance-dashboard-backend">Finance dashboard backend</a></b><br>
+      <sub>Finance data API with role-based access control.</sub>
+    </td>
+    <td width="33%" valign="top">
+      <a href="https://github.com/SHAILESH-RS-UPADHYAY/food-cart"><img src="assets/icons/food-cart.svg" width="48" height="48" alt=""></a><br>
+      <b><a href="https://github.com/SHAILESH-RS-UPADHYAY/food-cart">Food Cart</a></b><br>
+      <sub>Order ahead at campus food stalls and skip the queue.</sub>
+    </td>
+    <td width="33%" valign="top">
+      <a href="https://github.com/SHAILESH-RS-UPADHYAY/luq-prototype"><img src="assets/icons/luq-prototype.svg" width="48" height="48" alt=""></a><br>
+      <b><a href="https://github.com/SHAILESH-RS-UPADHYAY/luq-prototype">LÜQ</a></b><br>
+      <sub>An emotion-aware character that responds not with words, but with presence.</sub>
+    </td>
+  </tr>
+</table>
