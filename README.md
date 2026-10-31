@@ -36,6 +36,15 @@ Resolves DNS, reads the TLS certificate and headers, matches signatures and cite
 
 <br>
 
+### Activity
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/stats-dark.svg">
+  <img src="assets/stats-light.svg" width="100%" alt="Contributions over the last 12 months, streaks and language mix, refreshed daily.">
+</picture>
+
+<br>
+
 ### Elsewhere on GitHub
 
 <table>
