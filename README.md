@@ -14,7 +14,7 @@
   </picture>
 </a>
 
-Reads the open chat in one AI assistant, packs it into a Markdown capsule within a token budget, and types it into another. Manifest V3, no network requests. [Code](https://github.com/SHAILESH-RS-UPADHYAY/tether)
+Reads the open chat in one AI assistant, packs it into a Markdown capsule within a token budget, and types it into another. Manifest V3, no network requests. [Live](https://tether-capsule.vercel.app) and [code](https://github.com/SHAILESH-RS-UPADHYAY/tether)
 
 <a href="https://github.com/SHAILESH-RS-UPADHYAY/blueprint-sh">
   <picture>
