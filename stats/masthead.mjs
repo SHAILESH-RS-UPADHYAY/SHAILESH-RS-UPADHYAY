@@ -7,18 +7,16 @@ const PORTRAIT = readFileSync(new URL('./portrait.txt', import.meta.url), 'utf8'
 const faces = ['Newsreader', 'Sans'].map((n) => `@font-face{font-family:${n};src:url(data:font/woff;base64,${FONTS[n]}) format('woff')}`).join('');
 
 const THEMES = {
-  dark: { ink: '#F0ECE4', sub: '#9AA4AE', line: '#30363D', disc: ['#26303D', '#121821'], k: '#F5F0E6', b: '#9B6BFF',
+  dark: { ink: '#F0ECE4', sub: '#9AA4AE', line: '#30363D', disc: ['#26303D', '#121821'],
     orbits: ['#00FF41', '#9B6BFF', '#EA580C', '#5AA9F0'] },
-  light: { ink: '#1F2328', sub: '#59636E', line: '#D0D7DE', disc: ['#E9EEF4', '#D5DDE6'], k: '#1E293B', b: '#6D28D9',
+  light: { ink: '#1F2328', sub: '#59636E', line: '#D0D7DE', disc: ['#E9EEF4', '#D5DDE6'],
     orbits: ['#0FA33A', '#6D28D9', '#EA580C', '#0F3D6E'] },
 };
 const FLAGSHIPS = [['radar', 'RADAR'], ['eves', 'EVES'], ['vettly', 'Vettly'], ['blueprint', 'Blueprint.sh']];
 const BIO = ['CS grad (AI/ML) who builds reliable backends,', 'automates the repetitive stuff, and geeks out', 'over AI research.'];
 
-function mark(slug, x, y, size, c) {
-  const s = readFileSync(new URL(`../assets/logos/${slug}.svg`, import.meta.url), 'utf8').trim()
-    .replace(/<title>[^<]*<\/title>/, '').replace(/<style>.*?<\/style>/, '')
-    .replaceAll('class="k"', `fill="${c.k}"`).replaceAll('class="b"', `fill="${c.b}"`);
+function mark(slug, x, y, size) {
+  const s = readFileSync(new URL(`../assets/logos/${slug}.svg`, import.meta.url), 'utf8').trim().replace(/<title>[^<]*<\/title>/, '');
   return s.replace(/^<svg[^>]*>/, `<svg x="${x}" y="${y}" width="${size}" height="${size}" viewBox="0 0 64 64">`);
 }
 
@@ -53,7 +51,7 @@ function draw(theme, narrow) {
   const step = narrow ? 102 : 124;
   FLAGSHIPS.forEach(([slug, name], i) => {
     const x = left + i * step;
-    out.push(mark(slug, x, rowY, 26, c));
+    out.push(mark(slug, x, rowY, 26));
     out.push(`<text x="${x + 32}" y="${rowY + 18}" font-family="Sans" font-size="${narrow ? 13 : 14}" fill="${c.ink}">${name}</text>`);
   });
 

@@ -22,10 +22,8 @@ function pen() {
     done: () => a.join(''),
   };
 }
-function mark(slug, x, y, size, colours = {}) {
-  let s = readFileSync(new URL(`../assets/logos/${slug}.svg`, import.meta.url), 'utf8').trim();
-  s = s.replace(/<title>[^<]*<\/title>/, '').replace(/<style>.*?<\/style>/, '');
-  for (const [cls, fill] of Object.entries(colours)) s = s.replaceAll(`class="${cls}"`, `fill="${fill}"`);
+function mark(slug, x, y, size) {
+  const s = readFileSync(new URL(`../assets/logos/${slug}.svg`, import.meta.url), 'utf8').trim().replace(/<title>[^<]*<\/title>/, '');
   return s.replace(/^<svg[^>]*>/, `<svg x="${x}" y="${y}" width="${size}" height="${size}" viewBox="0 0 64 64">`);
 }
 const polar = (cx, cy, r, deg) => { const a = ((deg - 90) * Math.PI) / 180; return [f1(cx + r * Math.cos(a)), f1(cy + r * Math.sin(a))]; };
@@ -161,7 +159,7 @@ function eves(narrow) {
   const T = { font: 'Type', fill: c.ink, size: 15 };
   const B = { font: 'TypeBold', fill: c.ink };
 
-  p.raw(mark('eves', pad - 4, narrow ? 22 : 26, 54, { b: c.v }));
+  p.raw(mark('eves', pad - 4, narrow ? 22 : 26, 54));
   p.t(pad + 58, narrow ? 64 : 68, 'EVES', { ...B, size: 46 });
   let y;
   if (narrow) {
@@ -271,7 +269,7 @@ function vettly(narrow) {
   for (let y = 0; y <= height; y += 24) grid += `M0 ${y}H${W}`;
   p.raw(`<path d="${grid}" stroke="${c.line}" stroke-width="1" fill="none"/>`);
 
-  p.raw(mark('vettly', pad, 26, 56, { k: c.ink }));
+  p.raw(mark('vettly', pad, 26, 56));
   p.t(pad + 66, 72, 'Vettly', { font: 'Syne', size: 50, fill: c.ink, extra: 'letter-spacing="-1"' });
   const lines = narrow
     ? ['Interview prep built from what you actually', 'shipped: your resume, your GitHub, the job', 'post and the take-home.']

@@ -215,8 +215,7 @@ export function projects(vm, { theme = 'dark', narrow = false } = {}) {
   monthTicks(weeks).forEach(({ i, m }) => p.t(x0 + i * cell, axisY, MONTHS[m], { size: 12, fill: c.muted }));
 
   const symbols = FLAGSHIPS.map((s) => {
-    const body = logo(LOGO_OF[s]).replace(/^<svg[^>]*>/, '').replace(/<\/svg>\s*$/, '').replace(/<title>[^<]*<\/title>/, '')
-      .replace(/<style>.*?<\/style>/, '').replace(/class="b"/g, `fill="${theme === 'dark' ? '#9B6BFF' : '#6D28D9'}"`).replace(/class="k"/g, `fill="${theme === 'dark' ? '#F5F0E6' : '#1E293B'}"`);
+    const body = logo(LOGO_OF[s]).replace(/^<svg[^>]*>/, '').replace(/<\/svg>\s*$/, '').replace(/<title>[^<]*<\/title>/, '');
     return `<symbol id="m-${s}" viewBox="0 0 64 64">${body}</symbol>`;
   }).join('');
   p.raw(`<defs>${symbols}</defs>`);
@@ -383,8 +382,7 @@ export function stack(vm, { theme = 'dark', narrow = false } = {}) {
   ty += 8;
   p.r(tx, ty, (narrow ? W - pad - tx : W - pad - tx), 1, c.line);
   const symbols = Object.keys(XRAY.projects).map((s) => {
-    const body = logo(LOGO_OF[s]).replace(/^<svg[^>]*>/, '').replace(/<\/svg>\s*$/, '').replace(/<title>[^<]*<\/title>/, '')
-      .replace(/<style>.*?<\/style>/, '').replace(/class="b"/g, `fill="${theme === 'dark' ? '#9B6BFF' : '#6D28D9'}"`).replace(/class="k"/g, `fill="${theme === 'dark' ? '#F5F0E6' : '#1E293B'}"`);
+    const body = logo(LOGO_OF[s]).replace(/^<svg[^>]*>/, '').replace(/<\/svg>\s*$/, '').replace(/<title>[^<]*<\/title>/, '');
     return `<symbol id="x-${s}" viewBox="0 0 64 64">${body}</symbol>`;
   }).join('');
   p.raw(`<defs>${symbols}</defs>`);
