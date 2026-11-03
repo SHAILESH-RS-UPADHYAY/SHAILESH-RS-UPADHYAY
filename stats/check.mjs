@@ -79,7 +79,7 @@ if (existsSync(local('radar/vercel.json'))) {
   assert.equal(count('radar/src/types/index.ts', /^ {2}'[a-z_]+',$/gm) >= 16, true, 'job boards');
   const matcher = readFileSync(local('radar/src/lib/ai/matcher.ts'), 'utf8');
   assert(matcher.includes('RADAR_SIM_FLOOR || 0.32') && matcher.includes('RADAR_SIM_CEIL || 0.64'), 'similarity band');
-  assert(matcher.includes('vectorScore * 0.6') && matcher.includes('* 100 * 0.4'), 'score weights');
+  assert(/vectorScore \* 0\.6|\(1 - skillWeight\)/.test(matcher) && /\* 100 \* 0\.4|skillWeight = \(0\.4 /.test(matcher), 'score weights');
   const tests = execFileSync('git', ['-C', local('radar').pathname.slice(1), 'ls-files'], { encoding: 'utf8' }).split('\n').filter((f) => /\.test\.tsx?$/.test(f)).length;
   assert.equal(tests, 37, 'RADAR test files');
 }
