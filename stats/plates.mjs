@@ -160,8 +160,8 @@ export function pulse(vm, { theme = 'dark', narrow = false, now = Date.now() } =
   const swatch = narrow ? 58 : 29;
   if (!narrow) {
     p.t(pad, top + 10, 'Contributions a day', { size: 13, fill: c.ink });
-    p.t(pad, top + 28, 'the same count as', { size: 12, fill: c.muted });
-    p.t(pad, top + 43, "GitHub's own graph", { size: 12, fill: c.muted });
+    p.t(pad, top + 28, 'as counted by GitHub,', { size: 12, fill: c.muted });
+    p.t(pad, top + 43, 'private days included', { size: 12, fill: c.muted });
   }
   c.ramp.forEach((color, i) => {
     p.r(lx + i * swatch, legendY, swatch - 3, 10, color, 2);
