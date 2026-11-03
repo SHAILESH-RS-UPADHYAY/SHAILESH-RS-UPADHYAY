@@ -6,10 +6,10 @@
 </picture>
 
 <picture>
-  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/live/pulse-dark-m.svg">
-  <source media="(max-width: 600px)" srcset="assets/live/pulse-light-m.svg">
-  <source media="(prefers-color-scheme: dark)" srcset="assets/live/pulse-dark.svg">
-  <img src="assets/live/pulse-light.svg" width="100%" alt="My total commits and how recently the last one landed, contributions in the last 12 months, my streak, and a calendar of every day, drawn live from GitHub.">
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="https://shailesh-stats.vercel.app/api/plate?name=pulse&amp;theme=dark&amp;w=m">
+  <source media="(max-width: 600px)" srcset="https://shailesh-stats.vercel.app/api/plate?name=pulse&amp;theme=light&amp;w=m">
+  <source media="(prefers-color-scheme: dark)" srcset="https://shailesh-stats.vercel.app/api/plate?name=pulse&amp;theme=dark">
+  <img src="https://shailesh-stats.vercel.app/api/plate?name=pulse&amp;theme=light" width="100%" alt="My total commits and how recently the last one landed, contributions in the last 12 months, my streak, and a calendar of every day, drawn live from GitHub.">
 </picture>
 
 <br>
@@ -63,25 +63,27 @@ Parses JavaScript, TypeScript and Python imports, finds cycles with Tarjan's alg
 ### By the numbers
 
 <picture>
-  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/live/projects-dark-m.svg">
-  <source media="(max-width: 600px)" srcset="assets/live/projects-light-m.svg">
-  <source media="(prefers-color-scheme: dark)" srcset="assets/live/projects-dark.svg">
-  <img src="assets/live/projects-light.svg" width="100%" alt="Commits per week for each project since my first active week, with the four flagship projects highlighted and a total beside each.">
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="https://shailesh-stats.vercel.app/api/plate?name=projects&amp;theme=dark&amp;w=m">
+  <source media="(max-width: 600px)" srcset="https://shailesh-stats.vercel.app/api/plate?name=projects&amp;theme=light&amp;w=m">
+  <source media="(prefers-color-scheme: dark)" srcset="https://shailesh-stats.vercel.app/api/plate?name=projects&amp;theme=dark">
+  <img src="https://shailesh-stats.vercel.app/api/plate?name=projects&amp;theme=light" width="100%" alt="Commits per week for each project since my first active week, with the four flagship projects highlighted and a total beside each.">
 </picture>
 
 <picture>
-  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/live/rhythm-dark-m.svg">
-  <source media="(max-width: 600px)" srcset="assets/live/rhythm-light-m.svg">
-  <source media="(prefers-color-scheme: dark)" srcset="assets/live/rhythm-dark.svg">
-  <img src="assets/live/rhythm-light.svg" width="100%" alt="Commits by weekday and hour in India time, with the busiest stretch of the day highlighted and a total for each weekday.">
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="https://shailesh-stats.vercel.app/api/plate?name=rhythm&amp;theme=dark&amp;w=m">
+  <source media="(max-width: 600px)" srcset="https://shailesh-stats.vercel.app/api/plate?name=rhythm&amp;theme=light&amp;w=m">
+  <source media="(prefers-color-scheme: dark)" srcset="https://shailesh-stats.vercel.app/api/plate?name=rhythm&amp;theme=dark">
+  <img src="https://shailesh-stats.vercel.app/api/plate?name=rhythm&amp;theme=light" width="100%" alt="Commits by weekday and hour in India time, with the busiest stretch of the day highlighted and a total for each weekday.">
 </picture>
 
 <picture>
-  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/live/stack-dark-m.svg">
-  <source media="(max-width: 600px)" srcset="assets/live/stack-light-m.svg">
-  <source media="(prefers-color-scheme: dark)" srcset="assets/live/stack-dark.svg">
-  <img src="assets/live/stack-light.svg" width="100%" alt="Languages by share of bytes across all my repositories, next to lines, modules, imports and cycles measured in each flagship project.">
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="https://shailesh-stats.vercel.app/api/plate?name=stack&amp;theme=dark&amp;w=m">
+  <source media="(max-width: 600px)" srcset="https://shailesh-stats.vercel.app/api/plate?name=stack&amp;theme=light&amp;w=m">
+  <source media="(prefers-color-scheme: dark)" srcset="https://shailesh-stats.vercel.app/api/plate?name=stack&amp;theme=dark">
+  <img src="https://shailesh-stats.vercel.app/api/plate?name=stack&amp;theme=light" width="100%" alt="Languages by share of bytes across all my repositories, next to lines, modules, imports and cycles measured in each flagship project.">
 </picture>
+
+<sub>These charts are drawn from GitHub when the page loads, so a new commit shows up within a minute. <a href="https://shailesh-stats.vercel.app/api/data">The numbers behind them</a>.</sub>
 
 <br>
 

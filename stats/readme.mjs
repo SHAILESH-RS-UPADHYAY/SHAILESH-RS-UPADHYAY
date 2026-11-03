@@ -1,8 +1,7 @@
 // Writes README.md. The <picture> blocks repeat a lot, so they live here once.
-// LIVE is the deployed endpoint; leave it empty and the charts come from the rendered copies in assets/live.
 import { writeFileSync } from 'node:fs';
 
-const LIVE = process.env.LIVE_URL ?? '';
+const LIVE = 'https://shailesh-stats.vercel.app';
 const ME = 'https://github.com/SHAILESH-RS-UPADHYAY';
 
 const picture = (src, alt) => `<picture>
@@ -13,9 +12,7 @@ const picture = (src, alt) => `<picture>
 </picture>`;
 
 const local = (dir, name) => (theme, narrow) => `${dir}/${name}-${theme}${narrow ? '-m' : ''}.svg`;
-const live = (name) => (LIVE
-  ? (theme, narrow) => `${LIVE}/api/plate?name=${name}&theme=${theme}${narrow ? '&w=m' : ''}`
-  : local('assets/live', name));
+const live = (name) => (theme, narrow) => `${LIVE}/api/plate?name=${name}&amp;theme=${theme}${narrow ? '&amp;w=m' : ''}`;
 
 // Flagship plates live in their own product's world, so they don't change with the page theme.
 const plate = (name, href, alt) => `<a href="${href}">
@@ -84,7 +81,9 @@ ${picture(live('rhythm'), 'Commits by weekday and hour in India time, with the b
 
 ${picture(live('stack'), 'Languages by share of bytes across all my repositories, next to lines, modules, imports and cycles measured in each flagship project.')}
 
-${LIVE ? `<sub>These charts are drawn from GitHub when the page loads, so a new commit shows up within a minute. <a href="${LIVE}/api/data">The numbers behind them</a>.</sub>\n\n` : ''}<br>
+<sub>These charts are drawn from GitHub when the page loads, so a new commit shows up within a minute. <a href="${LIVE}/api/data">The numbers behind them</a>.</sub>
+
+<br>
 
 ### Also built
 
@@ -94,4 +93,4 @@ ${also.map((a) => row(...a)).join('\n\n')}
 `;
 
 writeFileSync(new URL('../README.md', import.meta.url), readme);
-console.log(`README written, charts ${LIVE ? `live from ${LIVE}` : 'from assets/live'}`);
+console.log('README written');
