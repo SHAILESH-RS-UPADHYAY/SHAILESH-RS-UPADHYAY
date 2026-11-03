@@ -1,0 +1,33 @@
+{
+  "measured": "2026-11-04",
+  "projects": {
+    "radar": {
+      "name": "RADAR",
+      "lines": 34359,
+      "modules": 196,
+      "imports": 498,
+      "cycles": 0
+    },
+    "eves": {
+      "name": "EVES",
+      "lines": 12887,
+      "modules": 114,
+      "imports": 281,
+      "cycles": 0
+    },
+    "vettly": {
+      "name": "Vettly",
+      "lines": 13653,
+      "modules": 42,
+      "imports": 61,
+      "cycles": 1
+    },
+    "blueprint-sh": {
+      "name": "Blueprint.sh",
+      "lines": 1944,
+      "modules": 19,
+      "imports": 39,
+      "cycles": 0
+    }
+  }
+}
