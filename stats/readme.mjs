@@ -55,12 +55,6 @@ An AI job engine. It reads 30 job feeds, finds funded startups on its own, check
 
 <br>
 
-${plate('eves', 'work/eves.md', 'EVES: a two-hour meeting as tape with two speakers and a moving record head, condensed part by part into goals, plans and paste-ready prompts.')}
-
-A desktop app for long engineering calls. It records the meeting, transcribes it live with speaker labels, and turns it into a brief you can question and prompts you can paste. Everything stays on your machine. **React, TypeScript, Deepgram.** <a href="work/eves.md">Case study</a>
-
-<br>
-
 ${plate('vettly', 'work/vettly.md', 'Vettly: an 80,000 character context budget, a four provider failover chain and a seven dimension quality bar that every answer has to clear.')}
 
 Interview prep built on your real work. It reads your resume, your GitHub, the job post and the take-home, then asks what only you could be asked and checks every answer for sounding human. **FastAPI, Python, Neon, Clerk.** <a href="https://vettly-sigma.vercel.app">Live</a> · <a href="work/vettly.md">Case study</a>
@@ -70,6 +64,12 @@ Interview prep built on your real work. It reads your resume, your GitHub, the j
 ${plate('blueprint', 'https://blueprint-sh.vercel.app', 'Blueprint.sh: its own source drawn as an architecture sheet by its own engine.')}
 
 Parses JavaScript, TypeScript and Python imports, finds cycles with Tarjan's algorithm and lays the graph out with ELK in a Web Worker. Your code never leaves the browser. **TypeScript, ELK, hand-written SVG.** <a href="https://blueprint-sh.vercel.app">Live</a> · <a href="${ME}/blueprint-sh">Code</a>
+
+<br>
+
+${plate('eves', 'work/eves.md', 'EVES: a live meeting moving through the app, from recording to a transcript in Hindi and English, to a written brief, to a prompt ready to paste.')}
+
+A desktop app for long engineering calls. It records the meeting, transcribes it live with speaker labels, and turns it into a brief you can question and prompts you can paste. Everything stays on your machine. **React, TypeScript, Deepgram.** <a href="work/eves.md">Case study</a>
 
 <br>
 

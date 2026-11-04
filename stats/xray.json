@@ -8,13 +8,6 @@
       "imports": 498,
       "cycles": 0
     },
-    "eves": {
-      "name": "EVES",
-      "lines": 12887,
-      "modules": 114,
-      "imports": 281,
-      "cycles": 0
-    },
     "vettly": {
       "name": "Vettly",
       "lines": 13653,
@@ -27,6 +20,13 @@
       "lines": 1944,
       "modules": 19,
       "imports": 39,
+      "cycles": 0
+    },
+    "eves": {
+      "name": "EVES",
+      "lines": 12887,
+      "modules": 114,
+      "imports": 281,
       "cycles": 0
     }
   }

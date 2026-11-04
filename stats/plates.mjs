@@ -14,7 +14,7 @@ const THEMES = {
     ramp: ['#F5DFAE', '#E9BC62', '#CC8E1E', '#8F5F08'], neutral: '#AEB4BB' },
 };
 
-const FLAGSHIPS = ['radar', 'eves', 'vettly', 'blueprint-sh'];
+const FLAGSHIPS = ['radar', 'vettly', 'blueprint-sh', 'eves'];
 const LOGO_OF = { radar: 'radar', eves: 'eves', vettly: 'vettly', 'blueprint-sh': 'blueprint' };
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const IST = 5.5 * 3600e3;

@@ -27,17 +27,6 @@ An AI job engine. It reads 30 job feeds, finds funded startups on its own, check
 
 <br>
 
-<a href="work/eves.md">
-  <picture>
-    <source media="(max-width: 600px)" srcset="assets/plates/eves-m.svg">
-    <img src="assets/plates/eves.svg" width="100%" alt="EVES: a two-hour meeting as tape with two speakers and a moving record head, condensed part by part into goals, plans and paste-ready prompts.">
-  </picture>
-</a>
-
-A desktop app for long engineering calls. It records the meeting, transcribes it live with speaker labels, and turns it into a brief you can question and prompts you can paste. Everything stays on your machine. **React, TypeScript, Deepgram.** <a href="work/eves.md">Case study</a>
-
-<br>
-
 <a href="work/vettly.md">
   <picture>
     <source media="(max-width: 600px)" srcset="assets/plates/vettly-m.svg">
@@ -57,6 +46,17 @@ Interview prep built on your real work. It reads your resume, your GitHub, the j
 </a>
 
 Parses JavaScript, TypeScript and Python imports, finds cycles with Tarjan's algorithm and lays the graph out with ELK in a Web Worker. Your code never leaves the browser. **TypeScript, ELK, hand-written SVG.** <a href="https://blueprint-sh.vercel.app">Live</a> · <a href="https://github.com/SHAILESH-RS-UPADHYAY/blueprint-sh">Code</a>
+
+<br>
+
+<a href="work/eves.md">
+  <picture>
+    <source media="(max-width: 600px)" srcset="assets/plates/eves-m.svg">
+    <img src="assets/plates/eves.svg" width="100%" alt="EVES: a live meeting moving through the app, from recording to a transcript in Hindi and English, to a written brief, to a prompt ready to paste.">
+  </picture>
+</a>
+
+A desktop app for long engineering calls. It records the meeting, transcribes it live with speaker labels, and turns it into a brief you can question and prompts you can paste. Everything stays on your machine. **React, TypeScript, Deepgram.** <a href="work/eves.md">Case study</a>
 
 <br>
 

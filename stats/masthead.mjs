@@ -12,7 +12,7 @@ const THEMES = {
   light: { ink: '#1F2328', sub: '#59636E', line: '#D0D7DE', disc: ['#E9EEF4', '#D5DDE6'],
     orbits: ['#0FA33A', '#6D28D9', '#EA580C', '#0F3D6E'] },
 };
-const FLAGSHIPS = [['radar', 'RADAR'], ['eves', 'EVES'], ['vettly', 'Vettly'], ['blueprint', 'Blueprint.sh']];
+const FLAGSHIPS = [['radar', 'RADAR'], ['vettly', 'Vettly'], ['blueprint', 'Blueprint.sh'], ['eves', 'EVES']];
 const BIO = ['CS grad (AI/ML) who builds reliable backends,', 'automates the repetitive stuff, and geeks out', 'over AI research.'];
 
 function mark(slug, x, y, size) {
