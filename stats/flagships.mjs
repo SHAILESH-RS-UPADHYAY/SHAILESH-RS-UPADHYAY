@@ -152,104 +152,159 @@ function radar(narrow) {
 const seeded = (seed) => () => { seed = (seed + 0x6d2b79f5) | 0; let t = Math.imul(seed ^ (seed >>> 15), 1 | seed); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
 
 function eves(narrow) {
-  const c = { bg: '#0C0818', v: '#9B6BFF', rose: '#F43F5E', cy: '#22D3EE', ink: '#EEEAFB', sub: '#A79FC6', dim: '#2B2247', wave: '#5A4A9C' };
+  const c = { bg: '#06080B', panel: '#0A0E13', line: '#1C252E', ink: '#EEF4F6', sub: '#8E9CA7', cy: '#22D3EE', pearl: '#C9D6DC', rec: '#F43F5E' };
   const W = narrow ? 440 : 880;
-  const pad = narrow ? 20 : 32;
+  const pad = narrow ? 18 : 32;
   const p = pen();
-  const T = { font: 'Type', fill: c.ink, size: 15 };
-  const B = { font: 'TypeBold', fill: c.ink };
+  const T = { font: 'Outfit', fill: c.ink, size: 15 };
+  const B = { font: 'OutfitBold', fill: c.ink };
+  const M = { font: 'Term', fill: c.sub, size: 12 };
 
-  p.raw(mark('eves', pad - 4, narrow ? 22 : 26, 54));
-  p.t(pad + 58, narrow ? 64 : 68, 'EVES', { ...B, size: 46 });
-  let y;
+  p.raw(mark('eves', pad, narrow ? 22 : 26, 50));
+  p.t(pad + 62, narrow ? 62 : 66, 'EVES', { ...B, size: 42, extra: 'letter-spacing="1"' });
   if (narrow) {
-    p.t(pad, 106, 'Records the meeting, follows Hindi and', T);
-    p.t(pad, 126, 'English in one sentence, and writes the', T);
-    p.t(pad, 146, 'prompt your coding agent needs.', T);
-    y = 178;
+    p.t(pad, 102, 'Records the meeting, follows Hindi and English', { ...T, fill: c.sub });
+    p.t(pad, 122, 'in one sentence, and writes the prompt.', { ...T, fill: c.sub });
   } else {
-    p.t(232, 50, 'Records the meeting, follows Hindi and English in one sentence,', T);
-    p.t(232, 72, 'and writes the prompt your coding agent needs.', T);
-    y = 110;
+    p.t(W - pad, 46, 'Records the meeting, follows Hindi and English in one sentence,', { ...T, fill: c.sub, anchor: 'end' });
+    p.t(W - pad, 68, 'and writes the prompt your coding agent needs.', { ...T, fill: c.sub, anchor: 'end' });
   }
 
-  // A two-hour meeting as tape. The turns are a sketch, drawn from a fixed seed so the plate never changes.
-  const x0 = pad + 28;
-  const x1 = W - pad;
-  const tape = x1 - x0;
-  const rnd = seeded(11);
-  const minute = tape / 120;
-  let t = 0;
-  let who = 0;
-  const lane = (s) => y + 4 + s * 20;
-  p.t(pad, lane(0) + 12, 'S1', { ...T, size: 13, fill: c.sub });
-  p.t(pad, lane(1) + 12, 'S2', { ...T, size: 13, fill: c.sub });
-  while (t < 120) {
-    const d = Math.min(120 - t, 0.8 + rnd() * rnd() * 11);
-    p.r(x0 + t * minute, lane(who), Math.max(2, d * minute - 2), 15, who ? c.cy : c.v, 2);
-    t += d;
-    if (rnd() > 0.12) who = 1 - who;
-  }
-  const waveTop = lane(2) + 6;
-  const waveH = 66;
-  const barW = narrow ? 3 : 4;
-  const n = Math.floor(tape / barW);
+  // The app window. Everything below is one meeting moving through it, left to right.
+  const wx = pad;
+  const wy = narrow ? 142 : 100;
+  const ww = W - pad * 2;
+  const inner = 18;
+  const barH = 40;
+  const waveH = 62;
+  const colTop = wy + barH + waveH;
+  const colH = narrow ? 374 : 186;
+  const pillsH = narrow ? 186 : 96;
+  const wh = barH + waveH + colH + pillsH;
+  p.r(wx, wy, ww, wh, c.panel, 14, 'stroke="' + c.line + '"');
+  const rule = (x0, y0, x1, y1) => p.raw('<path d="M' + x0 + ' ' + y0 + 'L' + x1 + ' ' + y1 + '" stroke="' + c.line + '"/>');
+  rule(wx, wy + barH, wx + ww, wy + barH);
+  rule(wx, colTop, wx + ww, colTop);
+  rule(wx, colTop + colH, wx + ww, colTop + colH);
+
+  p.raw('<circle class="rec" cx="' + (wx + inner + 4) + '" cy="' + (wy + 20) + '" r="4" fill="' + c.rec + '"/>');
+  p.t(wx + inner + 16, wy + 24, 'REC 01:47:22', { ...M, fill: c.ink });
+  p.t(wx + ww - inner, wy + 24, narrow ? 'hi + en · local' : 'nova-3 · hi + en · 100% local', { ...M, anchor: 'end' });
+
+  // Live capture: the newest sound is on the right, older sound fades out to the left. Colour is who is speaking.
+  const rnd = seeded(23);
+  const step = 6;
+  const count = Math.floor((ww - inner * 2) / step);
   let env = 0.5;
-  for (let i = 0; i < n; i++) {
-    env += (rnd() - 0.5) * 0.22;
-    env = Math.max(0.18, Math.min(1, env));
-    const h = Math.max(3, env ** 1.3 * waveH * (0.35 + rnd() * 0.65));
-    p.r(x0 + i * barW, waveTop + (waveH - h) / 2, barW - 1, h, c.wave);
+  let who = 0;
+  let left = 9;
+  for (let i = 0; i < count; i++) {
+    env = Math.max(0.16, Math.min(1, env + (rnd() - 0.5) * 0.3));
+    if (--left <= 0) { who = 1 - who; left = 6 + Math.floor(rnd() * 16); }
+    const h = Math.max(4, env * (waveH - 20) * (0.45 + rnd() * 0.55));
+    const age = 0.2 + 0.8 * (i / count) ** 1.5;
+    p.r(wx + inner + i * step, wy + barH + (waveH - h) / 2, 3, h, who ? c.pearl : c.cy, 1.5,
+      'opacity="' + age.toFixed(2) + '" class="w w' + (i % 3) + '" style="animation-delay:-' + ((i * 37) % 100) / 50 + 's"');
   }
-  const axisY = waveTop + waveH + 18;
-  for (const [m, label] of [[0, '0:00'], [30, '0:30'], [60, '1:00'], [90, '1:30'], [120, '2:00']]) {
-    p.t(x0 + m * minute, axisY, label, { ...T, size: 12, fill: c.sub, anchor: m === 0 ? 'start' : m === 120 ? 'end' : 'middle' });
-  }
-  // The record head rides the tape.
-  p.raw(`<g class="head"><rect x="${x0 - 1}" y="${y - 2}" width="2" height="${axisY - y - 12}" fill="${c.rose}"/><circle cx="${x0}" cy="${y - 4}" r="5" fill="${c.rose}"/></g>`);
-  y = axisY + 22;
 
-  // Long meetings are condensed part by part, then everything becomes something you can act on.
-  const parts = 4;
-  const partW = tape / parts;
-  for (let i = 0; i < parts; i++) {
-    const a = x0 + i * partW + 2;
-    const b = x0 + (i + 1) * partW - 2;
-    p.raw(`<path d="M${f1(a)} ${y - 8}V${y}H${f1(b)}V${y - 8}" fill="none" stroke="${c.sub}" stroke-opacity=".7"/>`);
-  }
-  p.t(x0 + tape / 2, y + 20, narrow ? 'too long for one prompt: condensed in parts' : 'too long for one prompt, so it is condensed part by part', { ...T, size: 13, fill: c.sub, anchor: 'middle' });
-  y += 58;
-
-  // The eight pills from the app, in the app's colours. The three agent prompts share one.
-  const pills = [['MAIN GOAL', '#ffcb6b'], ['HOW TO BUILD', '#7ee787'], ['3 AGENT PROMPTS', '#22d3ee'], ['FRONTEND PREVIEW', '#c678dd'], ['ACTION PLAN', '#ff79c6'], ['RISKS & QUESTIONS', '#ff5370']];
-  const char = 7.2;
-  const gap = narrow ? 8 : 9;
-  let px = pad;
-  for (const [label, colour] of pills) {
-    const w = label.length * char + 18;
-    if (px + w > W - pad) { px = pad; y += 36; }
-    p.r(px, y - 17, w, 27, `${colour}1A`, 13, `stroke="${colour}" stroke-opacity=".75"`);
-    p.t(px + w / 2, y + 1, label, { ...B, size: 12, fill: colour, anchor: 'middle' });
-    px += w + gap;
-  }
-  y += 50;
-
-  const stats = [['16 kHz', 'PCM to the live', 'transcriber'], ['32 kbps', 'Opus to disk,', '14.4 MB an hour'], ['5 s', 'the most a crash', 'can lose'], ['0.5-3×', 'playback with', 'pitch preserved'], ['3', 'AI brains,', 'your own keys']];
-  const col = (W - pad * 2) / (narrow ? 2 : 5);
-  stats.forEach(([v, a, b], i) => {
-    const sx = pad + (narrow ? i % 2 : i) * col;
-    const sy = y + (narrow ? Math.floor(i / 2) * 74 : 0);
-    p.t(sx, sy, v, { ...B, size: 25, fill: i === 2 ? c.rose : c.ink });
-    p.t(sx, sy + 19, a, { ...T, size: 13, fill: c.sub });
-    p.t(sx, sy + 35, b, { ...T, size: 13, fill: c.sub });
+  // Transcript: speaker labels, Hindi and English in the same sentence.
+  const tx = wx + inner;
+  const said = narrow
+    ? [['S1', '00:41', ['Cache layer pehle ship karte hain,', 'phir senior access kholenge.']], ['S2', '00:49', ['Redis rakhte hain, TTL five minutes.']], ['S1', '00:56', ['Theek hai, Friday tak ho jayega.']]]
+    : [['S1', '00:41', ['Cache layer pehle ship karte hain,', 'phir senior access kholenge.']], ['S2', '00:49', ['Redis rakhte hain, TTL five minutes.']], ['S1', '00:56', ['Theek hai, Friday tak ho jayega.']]];
+  p.t(tx, colTop + 28, 'LIVE TRANSCRIPT', { ...M, size: 11, extra: 'letter-spacing="1.4"' });
+  let ly = colTop + 56;
+  said.forEach(([who2, at, lines], i) => {
+    const colour = who2 === 'S1' ? c.cy : c.pearl;
+    p.raw('<g class="a l' + i + '">');
+    p.t(tx, ly, who2, { ...M, fill: colour });
+    p.t(tx, ly + 16, at, { ...M, size: 10 });
+    lines.forEach((l, k) => p.t(tx + 42, ly + k * 20, l, { ...T, size: 14 }));
+    p.raw('</g>');
+    ly += Math.max(38, lines.length * 20 + 12);
   });
-  const H = y + (narrow ? 2 * 74 + 56 : 56);
+
+  // The brief that writes itself out of what was said.
+  const colW = ww / 2;
+  const bx = narrow ? tx : wx + colW + inner + 8;
+  const by = narrow ? colTop + 196 : colTop;
+  if (narrow) rule(wx, by, wx + ww, by);
+  else rule(wx + colW, colTop, wx + colW, colTop + colH);
+  // A connector, drawn the way a design tool draws one, with the meeting passing through it.
+  const nx = wx + colW;
+  const ny = narrow ? by : colTop + colH / 2;
+  p.raw('<circle cx="' + nx + '" cy="' + ny + '" r="11" fill="' + c.panel + '" stroke="' + c.line + '"/>');
+  p.raw(narrow
+    ? '<path d="M' + nx + ' ' + (ny - 4) + 'V' + (ny + 4) + 'm-3-3l3 3 3-3" fill="none" stroke="' + c.cy + '" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>'
+    : '<path d="M' + (nx - 4) + ' ' + ny + 'H' + (nx + 4) + 'm-3-3l3 3-3 3" fill="none" stroke="' + c.cy + '" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>');
+  p.raw('<circle class="ping" cx="' + nx + '" cy="' + ny + '" r="11" fill="none" stroke="' + c.cy + '"/>');
+
+  p.t(bx, by + 28, 'MISSION BRIEF', { ...M, size: 11, fill: c.cy, extra: 'letter-spacing="1.4"' });
+  p.raw('<g class="goal">');
+  p.t(bx, by + 60, 'Ship the cache layer first,', { ...B, size: narrow ? 20 : 21 });
+  p.t(bx, by + 87, 'then open senior access.', { ...B, size: narrow ? 20 : 21 });
+  p.raw('</g><g class="a b0">');
+  p.t(bx, by + 113, 'Redis, 5-min TTL. Owners and dates from the call.', { ...T, size: 13, fill: c.sub });
+  p.raw('</g>');
+  let chipX = bx;
+  ['2 decisions', '3 action items', '1 open question'].forEach((label, i) => {
+    const w = label.length * 6.6 + 18;
+    p.raw('<g class="a b' + (i + 1) + '">');
+    p.r(chipX, by + 130, w, 26, 'none', 6, 'stroke="' + c.line + '"');
+    p.t(chipX + w / 2, by + 147, label, { ...M, size: 11, fill: c.pearl, anchor: 'middle' });
+    p.raw('</g>');
+    chipX += w + 7;
+  });
+
+  // The prompts, one press away. Colours are the app's own, held down to a dot.
+  const pills = [['MAIN GOAL', '#ffcb6b'], ['HOW TO BUILD', '#7ee787'], ['3 AGENT PROMPTS', '#22d3ee'], ['FRONTEND PREVIEW', '#c678dd'], ['ACTION PLAN', '#ff79c6'], ['RISKS & QUESTIONS', '#ff5370']];
+  let px = wx + inner;
+  let py = colTop + colH + 18;
+  pills.forEach(([label, colour], i) => {
+    const w = label.length * 6.6 + 34;
+    if (px + w > wx + ww - inner) { px = wx + inner; py += 36; }
+    p.raw('<g class="a q' + i + '">');
+    p.r(px, py, w, 28, '#0F151B', 14, 'stroke="' + c.line + '"');
+    if (i === 2) p.r(px, py, w, 28, c.cy, 14, 'class="press"');
+    p.raw('<circle cx="' + (px + 15) + '" cy="' + (py + 14) + '" r="3" fill="' + colour + '"/>');
+    p.t(px + 25, py + 18, label, { ...M, size: 11, fill: c.ink });
+    p.raw('</g>');
+    px += w + 7;
+  });
+  const toastY = py + 54;
+  p.raw('<g class="toast"><path d="M' + (wx + inner + 1) + ' ' + (toastY - 4) + 'l4 4 7-8" fill="none" stroke="' + c.cy + '" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>');
+  p.t(wx + inner + 20, toastY, 'Prompt copied, ready for your coding agent', { ...M, fill: c.ink });
+  p.raw('</g>');
+
+  // Engineering facts, read from the code by stats/check.mjs.
+  const stats = [['16 kHz', 'PCM to the live', 'transcriber'], ['32 kbps', 'Opus to disk,', '14.4 MB an hour'], ['5 s', 'the most a crash', 'can lose'], ['0.5-3×', 'playback with', 'pitch preserved'], ['3', 'AI brains,', 'your own keys']];
+  const col = ww / (narrow ? 2 : 5);
+  const sTop = wy + wh + 42;
+  stats.forEach(([v, l1, l2], i) => {
+    const sx = pad + (narrow ? i % 2 : i) * col;
+    const sy = sTop + (narrow ? Math.floor(i / 2) * 84 : 0);
+    p.t(sx, sy, v, { ...B, size: 25, fill: i === 2 ? c.cy : c.ink });
+    p.t(sx, sy + 21, l1, { ...T, size: 13, fill: c.sub });
+    p.t(sx, sy + 38, l2, { ...T, size: 13, fill: c.sub });
+  });
+  const H = sTop + (narrow ? 2 * 84 + 62 : 62);
+
+  // One 14 second loop. Every step eases in and holds, then the whole window clears together.
+  const rise = (name, at) => '.' + name + '{animation:' + name + ' 14s cubic-bezier(.2,.7,.2,1) infinite}@keyframes ' + name + '{0%,' + at + '%{opacity:0;transform:translateY(5px)}' + (at + 3) + '%,94%{opacity:1;transform:none}98%,100%{opacity:0;transform:none}}';
+  const steps = { l0: 3, l1: 11, l2: 19, b0: 46, b1: 49, b2: 51, b3: 53, q0: 57, q1: 59, q2: 61, q3: 63, q4: 65, q5: 67 };
+  const css = '.w{transform-box:fill-box;transform-origin:center;animation:talk 1.9s ease-in-out infinite}.w1{animation-duration:2.4s}.w2{animation-duration:3.1s}@keyframes talk{0%,100%{transform:scaleY(.55)}50%{transform:scaleY(1)}}'
+    + '.rec{animation:rec 2s ease-in-out infinite}@keyframes rec{50%{opacity:.35}}'
+    + Object.entries(steps).map(([n, at]) => rise(n, at)).join('')
+    + '.goal{animation:goal 14s linear infinite}@keyframes goal{0%,33%{clip-path:inset(0 100% 0 0)}45%,94%{clip-path:inset(0 0 0 0);opacity:1}98%,100%{clip-path:inset(0 0 0 0);opacity:0}}'
+    + '.ping{transform-box:fill-box;transform-origin:center;opacity:0;animation:ping 14s ease-out infinite}@keyframes ping{0%,27%{opacity:0;transform:scale(1)}28%{opacity:.9;transform:scale(1)}36%,100%{opacity:0;transform:scale(2.4)}}'
+    + '.press{opacity:0;animation:press 14s ease-out infinite}@keyframes press{0%,72%{opacity:0}73.5%,90%{opacity:.26}94%,100%{opacity:0}}'
+    + '.toast{opacity:0;animation:toast 14s cubic-bezier(.2,.7,.2,1) infinite}@keyframes toast{0%,74%{opacity:0;transform:translateY(5px)}77%,93%{opacity:1;transform:none}97%,100%{opacity:0;transform:none}}';
   return plate({
     W, H,
-    title: 'EVES: a two-hour meeting as tape with two speakers and a moving record head, condensed part by part into goals, plans and paste-ready prompts.',
-    fonts: ['Type', 'TypeBold'],
-    css: `.head{animation:head 48s linear infinite}@keyframes head{to{transform:translateX(${tape}px)}}`,
-  }, `<rect width="${W}" height="${H}" fill="${c.bg}"/>${p.done()}`);
+    title: 'EVES: a live meeting moving through the app, from recording to a transcript in Hindi and English, to a written brief, to a prompt ready to paste.',
+    fonts: ['Outfit', 'OutfitBold', 'Term'],
+    css,
+  }, '<rect width="' + W + '" height="' + H + '" fill="' + c.bg + '"/>' + p.done());
 }
 
 // Vettly -----------------------------------------------------------------------------------------------------------
