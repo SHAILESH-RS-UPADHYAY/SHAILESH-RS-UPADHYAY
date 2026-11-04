@@ -28,20 +28,20 @@ ${text} ${links.map(([label, href]) => `<a href="${href}">${label}</a>`).join(' 
 <br clear="left"><br>`;
 
 const also = [
-  ['tether.svg', 'Tether', 'Carries a chat from one AI assistant to another as a Markdown capsule.', [['Live', 'https://tether-capsule.vercel.app'], ['Code', `${ME}/tether`]]],
   ['autopsy.svg', 'Autopsy', 'Paste a URL, get an evidence-backed teardown of how the site is built.', [['Live', 'https://autopsy-casefile.vercel.app'], ['Code', `${ME}/autopsy`]]],
-  ['devine-cdc.png', 'Devine CDC', 'The site for a child development centre in Gurugram.', [['Live', 'https://devinecdc.in'], ['Code', `${ME}/devine-cdc`]]],
+  ['tether.svg', 'Tether', 'Carries a chat from one AI assistant to another as a Markdown capsule.', [['Live', 'https://tether-capsule.vercel.app'], ['Code', `${ME}/tether`]]],
   ['panna.svg', 'Panna', 'A local RAG chatbot that shows its source and refuses when the document does not say it.', [['Code', `${ME}/panna-rag`]]],
-  ['analytics.svg', 'Analytics API', 'Ingests 1.3 million e-commerce records and serves analytics in under two seconds.', [['Code', `${ME}/webvory-scalable-analytics-engine`]]],
   ['simplify-money.svg', 'Simplify Money', 'A chat backend for digital gold: reads intent, fetches live prices, logs the purchase.', [['Code', `${ME}/simplify-money-backend`]]],
-  ['food-cart.png', 'Food Cart', 'Order ahead at campus food stalls and skip the queue.', [['Live', 'https://food-cart-roan.vercel.app'], ['Code', `${ME}/food-cart`]]],
   ['iota.svg', 'Iota', 'An NER engine that turns messy address strings into clean, structured JSON.', [['Code', `${ME}/iota-address-parser`]]],
   ['autoflow.svg', 'AutoFlow', 'Writes the weekly executive report on its own, from the numbers and the company goals.', [['Code', `${ME}/autoflow`]]],
-  ['finance.svg', 'Finance API', 'A finance records API with role-based access for admins, analysts and viewers.', [['Code', `${ME}/finance-dashboard-backend`]]],
   ['luq.svg', 'LÜQ', 'An emotion-aware character that responds not with words, but with presence.', [['Code', `${ME}/luq-prototype`]]],
+  ['analytics.svg', 'Analytics API', 'Ingests 1.3 million e-commerce records and serves analytics in under two seconds.', [['Code', `${ME}/webvory-scalable-analytics-engine`]]],
+  ['finance.svg', 'Finance API', 'A finance records API with role-based access for admins, analysts and viewers.', [['Code', `${ME}/finance-dashboard-backend`]]],
+  ['food-cart.png', 'Food Cart', 'Order ahead at campus food stalls and skip the queue.', [['Live', 'https://food-cart-roan.vercel.app'], ['Code', `${ME}/food-cart`]]],
+  ['devine-cdc.png', 'Devine CDC', 'The site for a child development centre in Gurugram.', [['Live', 'https://devinecdc.in'], ['Code', `${ME}/devine-cdc`]]],
 ];
 
-const readme = `${picture(local('assets', 'header'), 'Shailesh Upadhyay. CS grad (AI/ML) who builds reliable backends, automates the repetitive stuff, and geeks out over AI research.')}
+const readme = `${picture(local('assets', 'header'), 'Shailesh Upadhyay. AI engineer building LLM systems, RAG and agents, and the full-stack products around them. CS grad (AI/ML).')}
 
 ${picture(live('pulse'), 'My total commits and how recently the last one landed, contributions in the last 12 months, my streak, and a calendar of every day, drawn live from GitHub.')}
 
@@ -91,7 +91,7 @@ ${picture(live('stack'), 'Languages by share of bytes across all my repositories
 
 ${also.map((a) => row(...a)).join('\n\n')}
 
-<sub>Python, SQL, Linux and the cloud on the backend. TypeScript and Node for everything people touch. Say hello on <a href="https://www.linkedin.com/in/shailesh-upadhyay-6a112624a">LinkedIn</a>.</sub>
+<sub>LLMs, RAG and agents first. Python and FastAPI behind them, TypeScript and Next.js for everything people touch. Say hello on <a href="https://www.linkedin.com/in/shailesh-upadhyay-6a112624a">LinkedIn</a>.</sub>
 `;
 
 writeFileSync(new URL('../README.md', import.meta.url), readme);

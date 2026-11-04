@@ -2,7 +2,7 @@
   <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/header-dark-m.svg">
   <source media="(max-width: 600px)" srcset="assets/header-light-m.svg">
   <source media="(prefers-color-scheme: dark)" srcset="assets/header-dark.svg">
-  <img src="assets/header-light.svg" width="100%" alt="Shailesh Upadhyay. CS grad (AI/ML) who builds reliable backends, automates the repetitive stuff, and geeks out over AI research.">
+  <img src="assets/header-light.svg" width="100%" alt="Shailesh Upadhyay. AI engineer building LLM systems, RAG and agents, and the full-stack products around them. CS grad (AI/ML).">
 </picture>
 
 <picture>
@@ -91,19 +91,14 @@ A desktop app for long engineering calls. It records the meeting, transcribes it
 
 <sub>Every product with its screen and links, in one place: <a href="https://shailesh-ai.codes/#products">shailesh-ai.codes</a></sub>
 
-<img align="left" src="assets/logos/tether.svg" width="44" height="44" hspace="12" alt="">
-<b>Tether</b><br>
-Carries a chat from one AI assistant to another as a Markdown capsule. <a href="https://tether-capsule.vercel.app">Live</a> · <a href="https://github.com/SHAILESH-RS-UPADHYAY/tether">Code</a>
-<br clear="left"><br>
-
 <img align="left" src="assets/logos/autopsy.svg" width="44" height="44" hspace="12" alt="">
 <b>Autopsy</b><br>
 Paste a URL, get an evidence-backed teardown of how the site is built. <a href="https://autopsy-casefile.vercel.app">Live</a> · <a href="https://github.com/SHAILESH-RS-UPADHYAY/autopsy">Code</a>
 <br clear="left"><br>
 
-<img align="left" src="assets/logos/devine-cdc.png" width="44" height="44" hspace="12" alt="">
-<b>Devine CDC</b><br>
-The site for a child development centre in Gurugram. <a href="https://devinecdc.in">Live</a> · <a href="https://github.com/SHAILESH-RS-UPADHYAY/devine-cdc">Code</a>
+<img align="left" src="assets/logos/tether.svg" width="44" height="44" hspace="12" alt="">
+<b>Tether</b><br>
+Carries a chat from one AI assistant to another as a Markdown capsule. <a href="https://tether-capsule.vercel.app">Live</a> · <a href="https://github.com/SHAILESH-RS-UPADHYAY/tether">Code</a>
 <br clear="left"><br>
 
 <img align="left" src="assets/logos/panna.svg" width="44" height="44" hspace="12" alt="">
@@ -111,19 +106,9 @@ The site for a child development centre in Gurugram. <a href="https://devinecdc.
 A local RAG chatbot that shows its source and refuses when the document does not say it. <a href="https://github.com/SHAILESH-RS-UPADHYAY/panna-rag">Code</a>
 <br clear="left"><br>
 
-<img align="left" src="assets/logos/analytics.svg" width="44" height="44" hspace="12" alt="">
-<b>Analytics API</b><br>
-Ingests 1.3 million e-commerce records and serves analytics in under two seconds. <a href="https://github.com/SHAILESH-RS-UPADHYAY/webvory-scalable-analytics-engine">Code</a>
-<br clear="left"><br>
-
 <img align="left" src="assets/logos/simplify-money.svg" width="44" height="44" hspace="12" alt="">
 <b>Simplify Money</b><br>
 A chat backend for digital gold: reads intent, fetches live prices, logs the purchase. <a href="https://github.com/SHAILESH-RS-UPADHYAY/simplify-money-backend">Code</a>
-<br clear="left"><br>
-
-<img align="left" src="assets/logos/food-cart.png" width="44" height="44" hspace="12" alt="">
-<b>Food Cart</b><br>
-Order ahead at campus food stalls and skip the queue. <a href="https://food-cart-roan.vercel.app">Live</a> · <a href="https://github.com/SHAILESH-RS-UPADHYAY/food-cart">Code</a>
 <br clear="left"><br>
 
 <img align="left" src="assets/logos/iota.svg" width="44" height="44" hspace="12" alt="">
@@ -136,14 +121,29 @@ An NER engine that turns messy address strings into clean, structured JSON. <a h
 Writes the weekly executive report on its own, from the numbers and the company goals. <a href="https://github.com/SHAILESH-RS-UPADHYAY/autoflow">Code</a>
 <br clear="left"><br>
 
-<img align="left" src="assets/logos/finance.svg" width="44" height="44" hspace="12" alt="">
-<b>Finance API</b><br>
-A finance records API with role-based access for admins, analysts and viewers. <a href="https://github.com/SHAILESH-RS-UPADHYAY/finance-dashboard-backend">Code</a>
-<br clear="left"><br>
-
 <img align="left" src="assets/logos/luq.svg" width="44" height="44" hspace="12" alt="">
 <b>LÜQ</b><br>
 An emotion-aware character that responds not with words, but with presence. <a href="https://github.com/SHAILESH-RS-UPADHYAY/luq-prototype">Code</a>
 <br clear="left"><br>
 
-<sub>Python, SQL, Linux and the cloud on the backend. TypeScript and Node for everything people touch. Say hello on <a href="https://www.linkedin.com/in/shailesh-upadhyay-6a112624a">LinkedIn</a>.</sub>
+<img align="left" src="assets/logos/analytics.svg" width="44" height="44" hspace="12" alt="">
+<b>Analytics API</b><br>
+Ingests 1.3 million e-commerce records and serves analytics in under two seconds. <a href="https://github.com/SHAILESH-RS-UPADHYAY/webvory-scalable-analytics-engine">Code</a>
+<br clear="left"><br>
+
+<img align="left" src="assets/logos/finance.svg" width="44" height="44" hspace="12" alt="">
+<b>Finance API</b><br>
+A finance records API with role-based access for admins, analysts and viewers. <a href="https://github.com/SHAILESH-RS-UPADHYAY/finance-dashboard-backend">Code</a>
+<br clear="left"><br>
+
+<img align="left" src="assets/logos/food-cart.png" width="44" height="44" hspace="12" alt="">
+<b>Food Cart</b><br>
+Order ahead at campus food stalls and skip the queue. <a href="https://food-cart-roan.vercel.app">Live</a> · <a href="https://github.com/SHAILESH-RS-UPADHYAY/food-cart">Code</a>
+<br clear="left"><br>
+
+<img align="left" src="assets/logos/devine-cdc.png" width="44" height="44" hspace="12" alt="">
+<b>Devine CDC</b><br>
+The site for a child development centre in Gurugram. <a href="https://devinecdc.in">Live</a> · <a href="https://github.com/SHAILESH-RS-UPADHYAY/devine-cdc">Code</a>
+<br clear="left"><br>
+
+<sub>LLMs, RAG and agents first. Python and FastAPI behind them, TypeScript and Next.js for everything people touch. Say hello on <a href="https://www.linkedin.com/in/shailesh-upadhyay-6a112624a">LinkedIn</a>.</sub>

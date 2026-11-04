@@ -13,7 +13,7 @@ const THEMES = {
     orbits: ['#0FA33A', '#6D28D9', '#EA580C', '#0F3D6E'] },
 };
 const FLAGSHIPS = [['radar', 'RADAR'], ['vettly', 'Vettly'], ['blueprint', 'Blueprint.sh'], ['eves', 'EVES']];
-const BIO = ['CS grad (AI/ML) who builds reliable backends,', 'automates the repetitive stuff, and geeks out', 'over AI research.'];
+const BIO = ['AI engineer building LLM systems, RAG and', 'agents, and the full-stack products around', 'them. CS grad (AI/ML).'];
 
 function mark(slug, x, y, size) {
   const s = readFileSync(new URL(`../assets/logos/${slug}.svg`, import.meta.url), 'utf8').trim().replace(/<title>[^<]*<\/title>/, '');
