@@ -30,7 +30,7 @@ ${text} ${links.map(([label, href]) => `<a href="${href}">${label}</a>`).join(' 
 const also = [
   ['tether.svg', 'Tether', 'Carries a chat from one AI assistant to another as a Markdown capsule.', [['Live', 'https://tether-capsule.vercel.app'], ['Code', `${ME}/tether`]]],
   ['autopsy.svg', 'Autopsy', 'Paste a URL, get an evidence-backed teardown of how the site is built.', [['Live', 'https://autopsy-casefile.vercel.app'], ['Code', `${ME}/autopsy`]]],
-  ['devine-cdc.png', 'Devine CDC', 'The site for a child development centre in Gurugram.', [['Live', 'https://devine-cdc.vercel.app'], ['Code', `${ME}/devine-cdc`]]],
+  ['devine-cdc.png', 'Devine CDC', 'The site for a child development centre in Gurugram.', [['Live', 'https://devinecdc.in'], ['Code', `${ME}/devine-cdc`]]],
   ['panna.svg', 'Panna', 'A local RAG chatbot that shows its source and refuses when the document does not say it.', [['Code', `${ME}/panna-rag`]]],
   ['analytics.svg', 'Analytics API', 'Ingests 1.3 million e-commerce records and serves analytics in under two seconds.', [['Code', `${ME}/webvory-scalable-analytics-engine`]]],
   ['simplify-money.svg', 'Simplify Money', 'A chat backend for digital gold: reads intent, fetches live prices, logs the purchase.', [['Code', `${ME}/simplify-money-backend`]]],
@@ -51,7 +51,7 @@ ${picture(live('pulse'), 'My total commits and how recently the last one landed,
 
 ${plate('radar', 'work/radar.md', 'RADAR: a 24-hour scope showing its 37 scheduled runs a day, next to the score map that sends a job to the Vault or to resume tailoring.')}
 
-An AI job engine. It reads 30 job feeds, finds funded startups on its own, checks every posting is real, scores each one against your resume and files the best in a Vault. Near-misses get an honest resume rewrite. The last click stays yours. **Next.js, Supabase, Pinecone.** <a href="work/radar.md">Case study</a>
+An AI job engine. It reads 30 job feeds, finds funded startups on its own, checks every posting is real, scores each one against your resume and files the best in a Vault. Near-misses get an honest resume rewrite. The last click stays yours. **Next.js, Supabase, Pinecone.** <a href="https://radar-neon-theta.vercel.app">Live</a> · <a href="work/radar.md">Case study</a>
 
 <br>
 
@@ -86,6 +86,8 @@ ${picture(live('stack'), 'Languages by share of bytes across all my repositories
 <br>
 
 ### Also built
+
+<sub>Every product with its screen and links, in one place: <a href="https://shailesh-ai.codes/#products">shailesh-ai.codes</a></sub>
 
 ${also.map((a) => row(...a)).join('\n\n')}
 

@@ -23,7 +23,7 @@
   </picture>
 </a>
 
-An AI job engine. It reads 30 job feeds, finds funded startups on its own, checks every posting is real, scores each one against your resume and files the best in a Vault. Near-misses get an honest resume rewrite. The last click stays yours. **Next.js, Supabase, Pinecone.** <a href="work/radar.md">Case study</a>
+An AI job engine. It reads 30 job feeds, finds funded startups on its own, checks every posting is real, scores each one against your resume and files the best in a Vault. Near-misses get an honest resume rewrite. The last click stays yours. **Next.js, Supabase, Pinecone.** <a href="https://radar-neon-theta.vercel.app">Live</a> · <a href="work/radar.md">Case study</a>
 
 <br>
 
@@ -89,6 +89,8 @@ Parses JavaScript, TypeScript and Python imports, finds cycles with Tarjan's alg
 
 ### Also built
 
+<sub>Every product with its screen and links, in one place: <a href="https://shailesh-ai.codes/#products">shailesh-ai.codes</a></sub>
+
 <img align="left" src="assets/logos/tether.svg" width="44" height="44" hspace="12" alt="">
 <b>Tether</b><br>
 Carries a chat from one AI assistant to another as a Markdown capsule. <a href="https://tether-capsule.vercel.app">Live</a> · <a href="https://github.com/SHAILESH-RS-UPADHYAY/tether">Code</a>
@@ -101,7 +103,7 @@ Paste a URL, get an evidence-backed teardown of how the site is built. <a href="
 
 <img align="left" src="assets/logos/devine-cdc.png" width="44" height="44" hspace="12" alt="">
 <b>Devine CDC</b><br>
-The site for a child development centre in Gurugram. <a href="https://devine-cdc.vercel.app">Live</a> · <a href="https://github.com/SHAILESH-RS-UPADHYAY/devine-cdc">Code</a>
+The site for a child development centre in Gurugram. <a href="https://devinecdc.in">Live</a> · <a href="https://github.com/SHAILESH-RS-UPADHYAY/devine-cdc">Code</a>
 <br clear="left"><br>
 
 <img align="left" src="assets/logos/panna.svg" width="44" height="44" hspace="12" alt="">

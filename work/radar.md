@@ -2,7 +2,7 @@
 
 # RADAR
 
-An AI job engine that runs all day and leaves you only the final click.
+An AI job engine that runs all day and leaves you only the final click. [Open the live site](https://radar-neon-theta.vercel.app).
 
 <picture>
   <source media="(max-width: 600px)" srcset="../assets/plates/radar-m.svg">
