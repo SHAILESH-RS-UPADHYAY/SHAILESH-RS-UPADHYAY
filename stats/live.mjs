@@ -23,11 +23,12 @@ export function current() {
   return vm;
 }
 
-// Vercel's CDN holds a render for a minute. The browser and GitHub's image proxy are told not to keep it at all,
+// Vercel's CDN holds a render for a minute, then keeps serving it instantly while it fetches a fresh one, so
+// GitHub's image proxy never waits on a cold start and gives up. The browser and GitHub's image proxy are told not to keep it at all,
 // which is what makes a new commit show up on the next page load.
 export const headers = (type) => ({
   'content-type': type,
   'cache-control': 'no-cache, no-store, must-revalidate, max-age=0',
-  'vercel-cdn-cache-control': 'public, s-maxage=60',
+  'vercel-cdn-cache-control': 'public, s-maxage=60, stale-while-revalidate=604800',
   'x-content-type-options': 'nosniff',
 });
