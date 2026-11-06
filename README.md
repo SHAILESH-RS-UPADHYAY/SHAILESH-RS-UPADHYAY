@@ -5,6 +5,13 @@
   <img src="assets/header-light.svg" width="100%" alt="Shailesh Upadhyay. AI engineer building LLM systems, RAG and agents, and the full-stack products around them. CS grad (AI/ML).">
 </picture>
 
+<a href="https://shailesh-ai.codes">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/portfolio-dark.svg">
+  <img src="assets/portfolio-light.svg" width="100%" alt="Open my portfolio at shailesh-ai.codes: 20 products, with screens, deep dives and my resume.">
+</picture>
+</a>
+
 <picture>
   <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="https://shailesh-stats.vercel.app/api/plate?name=pulse&amp;theme=dark&amp;w=m">
   <source media="(max-width: 600px)" srcset="https://shailesh-stats.vercel.app/api/plate?name=pulse&amp;theme=light&amp;w=m">

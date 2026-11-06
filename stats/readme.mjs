@@ -43,6 +43,13 @@ const also = [
 
 const readme = `${picture(local('assets', 'header'), 'Shailesh Upadhyay. AI engineer building LLM systems, RAG and agents, and the full-stack products around them. CS grad (AI/ML).')}
 
+<a href="https://shailesh-ai.codes">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/portfolio-dark.svg">
+  <img src="assets/portfolio-light.svg" width="100%" alt="Open my portfolio at shailesh-ai.codes: 20 products, with screens, deep dives and my resume.">
+</picture>
+</a>
+
 ${picture(live('pulse'), 'My total commits and how recently the last one landed, contributions in the last 12 months, my streak, and a calendar of every day, drawn live from GitHub.')}
 
 <br>
