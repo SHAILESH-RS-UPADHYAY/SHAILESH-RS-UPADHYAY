@@ -12,7 +12,7 @@ const THEMES = {
   light: { ink: '#1F2328', sub: '#59636E', line: '#D0D7DE', disc: ['#E9EEF4', '#D5DDE6'],
     orbits: ['#0FA33A', '#6D28D9', '#EA580C', '#0F3D6E'] },
 };
-const FLAGSHIPS = [['radar', 'RADAR'], ['vettly', 'Vettly'], ['blueprint', 'Blueprint.sh'], ['eves', 'EVES']];
+const FLAGSHIPS = [['radar', 'RADAR'], ['vettly', 'Vettly'], ['eves', 'EVES'], ['blueprint', 'Blueprint.sh']];
 const BIO = ['AI engineer building LLM systems, RAG and', 'agents, and the full-stack products around', 'them. CS grad (AI/ML).'];
 
 function mark(slug, x, y, size) {

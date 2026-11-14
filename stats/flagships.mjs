@@ -123,7 +123,7 @@ function radar(narrow) {
   p.t(X(50), Y(0) + 31, 'cosine similarity, resume vs job', { ...T, size: 11, fill: c.sub, anchor: 'middle' });
   p.t(mapX - 22, y + mapH / 2, '% skills matched', { ...T, size: 11, fill: c.sub, anchor: 'middle', extra: `transform="rotate(-90 ${mapX - 22} ${y + mapH / 2})"` });
   // Numbers beside the map on desktop, below it on a phone.
-  const stats = [['30', 'job feeds read'], ['1024-d', 'vectors matched'], ['37', 'test files']];
+  const stats = [['30', 'job feeds read'], ['1024-d', 'vectors matched'], ['240+', 'tests']];
   if (narrow) {
     y += mapH + 66;
     stats.forEach(([v, l], i) => {

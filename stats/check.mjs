@@ -81,7 +81,10 @@ if (existsSync(local('radar/vercel.json'))) {
   assert(matcher.includes('RADAR_SIM_FLOOR || 0.32') && matcher.includes('RADAR_SIM_CEIL || 0.64'), 'similarity band');
   assert(/vectorScore \* 0\.6|\(1 - skillWeight\)/.test(matcher) && /\* 100 \* 0\.4|skillWeight = \(0\.4 /.test(matcher), 'score weights');
   const tests = execFileSync('git', ['-C', local('radar').pathname.slice(1), 'ls-files'], { encoding: 'utf8' }).split('\n').filter((f) => /\.test\.tsx?$/.test(f)).length;
-  assert.equal(tests, 37, 'RADAR test files');
+  assert.equal(tests, 38, 'RADAR test files');
+  // The plate says "240+ tests" (its display font has no 8, so it can't print the file count).
+  const cases = execFileSync('git', ['-C', local('radar').pathname.slice(1), 'grep', '-h', '-E', String.raw`^\s*(it|test)(\.each)?\(`, '--', '*.test.ts', '*.test.tsx'], { encoding: 'utf8' }).trim().split('\n').length;
+  assert(cases >= 240, `RADAR has ${cases} test cases, the plate says 240+`);
 }
 if (existsSync(local('vettly/backend/ai/context_engine.py'))) {
   const ctx = readFileSync(local('vettly/backend/ai/context_engine.py'), 'utf8');

@@ -45,6 +45,17 @@ Interview prep built on your real work. It reads your resume, your GitHub, the j
 
 <br>
 
+<a href="work/eves.md">
+  <picture>
+    <source media="(max-width: 600px)" srcset="assets/plates/eves-m.svg">
+    <img src="assets/plates/eves.svg" width="100%" alt="EVES: a live meeting moving through the app, from recording to a transcript in Hindi and English, to a written brief, to a prompt ready to paste.">
+  </picture>
+</a>
+
+A desktop app for long engineering calls. It records the meeting, transcribes it live with speaker labels, and turns it into a brief you can question and prompts you can paste. Recordings, transcripts and keys are stored only on your machine. **React, TypeScript, Deepgram.** <a href="https://eves-jet.vercel.app">Website</a> · <a href="https://github.com/SHAILESH-RS-UPADHYAY/eves">Code</a> · <a href="work/eves.md">Case study</a>
+
+<br>
+
 <a href="https://blueprint-sh.vercel.app">
   <picture>
     <source media="(max-width: 600px)" srcset="assets/plates/blueprint-m.svg">
@@ -53,17 +64,6 @@ Interview prep built on your real work. It reads your resume, your GitHub, the j
 </a>
 
 Parses JavaScript, TypeScript and Python imports, finds cycles with Tarjan's algorithm and lays the graph out with ELK in a Web Worker. Your code never leaves the browser. **TypeScript, ELK, hand-written SVG.** <a href="https://blueprint-sh.vercel.app">Live</a> · <a href="https://github.com/SHAILESH-RS-UPADHYAY/blueprint-sh">Code</a>
-
-<br>
-
-<a href="work/eves.md">
-  <picture>
-    <source media="(max-width: 600px)" srcset="assets/plates/eves-m.svg">
-    <img src="assets/plates/eves.svg" width="100%" alt="EVES: a live meeting moving through the app, from recording to a transcript in Hindi and English, to a written brief, to a prompt ready to paste.">
-  </picture>
-</a>
-
-A desktop app for long engineering calls. It records the meeting, transcribes it live with speaker labels, and turns it into a brief you can question and prompts you can paste. Everything stays on your machine. **React, TypeScript, Deepgram.** <a href="https://eves-jet.vercel.app">Live</a> · <a href="https://github.com/SHAILESH-RS-UPADHYAY/eves">Code</a> · <a href="work/eves.md">Case study</a>
 
 <br>
 
@@ -97,6 +97,11 @@ A desktop app for long engineering calls. It records the meeting, transcribes it
 ### Also built
 
 <sub>Every product with its screen and links, in one place: <a href="https://shailesh-ai.codes/#products">shailesh-ai.codes</a></sub>
+
+<img align="left" src="assets/logos/devine-cdc.png" width="44" height="44" hspace="12" alt="">
+<b>Devine CDC</b><br>
+The site for a child development centre in Gurugram, and the portal its families, therapists and admins use. The portal demo runs on made-up data. <a href="https://devinecdc.in">Site</a> · <a href="https://divine-cdc-dashboard-o65s.vercel.app/login">Portal demo</a> · <a href="https://github.com/SHAILESH-RS-UPADHYAY/devine-cdc">Code</a>
+<br clear="left"><br>
 
 <img align="left" src="assets/logos/autopsy.svg" width="44" height="44" hspace="12" alt="">
 <b>Autopsy</b><br>
@@ -146,11 +151,6 @@ A finance records API with role-based access for admins, analysts and viewers. <
 <img align="left" src="assets/logos/food-cart.png" width="44" height="44" hspace="12" alt="">
 <b>Food Cart</b><br>
 Order ahead at campus food stalls and skip the queue. <a href="https://food-cart-roan.vercel.app">Live</a> · <a href="https://github.com/SHAILESH-RS-UPADHYAY/food-cart">Code</a>
-<br clear="left"><br>
-
-<img align="left" src="assets/logos/devine-cdc.png" width="44" height="44" hspace="12" alt="">
-<b>Devine CDC</b><br>
-The site for a child development centre in Gurugram. <a href="https://devinecdc.in">Live</a> · <a href="https://github.com/SHAILESH-RS-UPADHYAY/devine-cdc">Code</a>
 <br clear="left"><br>
 
 <sub>LLMs, RAG and agents first. Python and FastAPI behind them, TypeScript and Next.js for everything people touch. Say hello on <a href="https://www.linkedin.com/in/shailesh-upadhyay-6a112624a">LinkedIn</a>.</sub>

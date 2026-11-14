@@ -30,6 +30,7 @@ ${text} ${links.map(([label, href]) => `<a href="${href}">${label}</a>`).join(' 
 <br clear="left"><br>`;
 
 const also = [
+  ['devine-cdc.png', 'Devine CDC', 'The site for a child development centre in Gurugram, and the portal its families, therapists and admins use. The portal demo runs on made-up data.', [['Site', 'https://devinecdc.in'], ['Portal demo', 'https://divine-cdc-dashboard-o65s.vercel.app/login'], ['Code', `${ME}/devine-cdc`]]],
   ['autopsy.svg', 'Autopsy', 'Paste a URL, get an evidence-backed teardown of how the site is built.', [['Live', 'https://autopsy-casefile.vercel.app'], ['Code', `${ME}/autopsy`]]],
   ['tether.svg', 'Tether', 'Carries a chat from one AI assistant to another as a Markdown capsule.', [['Live', 'https://tether-capsule.vercel.app'], ['Code', `${ME}/tether`]]],
   ['panna.svg', 'Panna', 'A local RAG chatbot that shows its source and refuses when the document does not say it.', [['Code', `${ME}/panna-rag`]]],
@@ -40,7 +41,6 @@ const also = [
   ['analytics.svg', 'Analytics API', 'Ingests 1.3 million e-commerce records and serves analytics in under two seconds.', [['Code', `${ME}/webvory-scalable-analytics-engine`]]],
   ['finance.svg', 'Finance API', 'A finance records API with role-based access for admins, analysts and viewers.', [['Code', `${ME}/finance-dashboard-backend`]]],
   ['food-cart.png', 'Food Cart', 'Order ahead at campus food stalls and skip the queue.', [['Live', 'https://food-cart-roan.vercel.app'], ['Code', `${ME}/food-cart`]]],
-  ['devine-cdc.png', 'Devine CDC', 'The site for a child development centre in Gurugram.', [['Live', 'https://devinecdc.in'], ['Code', `${ME}/devine-cdc`]]],
 ];
 
 const readme = `${picture(svg('assets', 'header'), 'Shailesh Upadhyay. AI engineer building LLM systems, RAG and agents, and the full-stack products around them. CS grad (AI/ML).')}
@@ -70,15 +70,15 @@ Interview prep built on your real work. It reads your resume, your GitHub, the j
 
 <br>
 
-${plate('blueprint', 'https://blueprint-sh.vercel.app', 'Blueprint.sh: its own source drawn as an architecture sheet by its own engine.')}
+${plate('eves', 'work/eves.md', 'EVES: a live meeting moving through the app, from recording to a transcript in Hindi and English, to a written brief, to a prompt ready to paste.')}
 
-Parses JavaScript, TypeScript and Python imports, finds cycles with Tarjan's algorithm and lays the graph out with ELK in a Web Worker. Your code never leaves the browser. **TypeScript, ELK, hand-written SVG.** <a href="https://blueprint-sh.vercel.app">Live</a> · <a href="${ME}/blueprint-sh">Code</a>
+A desktop app for long engineering calls. It records the meeting, transcribes it live with speaker labels, and turns it into a brief you can question and prompts you can paste. Recordings, transcripts and keys are stored only on your machine. **React, TypeScript, Deepgram.** <a href="https://eves-jet.vercel.app">Website</a> · <a href="https://github.com/SHAILESH-RS-UPADHYAY/eves">Code</a> · <a href="work/eves.md">Case study</a>
 
 <br>
 
-${plate('eves', 'work/eves.md', 'EVES: a live meeting moving through the app, from recording to a transcript in Hindi and English, to a written brief, to a prompt ready to paste.')}
+${plate('blueprint', 'https://blueprint-sh.vercel.app', 'Blueprint.sh: its own source drawn as an architecture sheet by its own engine.')}
 
-A desktop app for long engineering calls. It records the meeting, transcribes it live with speaker labels, and turns it into a brief you can question and prompts you can paste. Everything stays on your machine. **React, TypeScript, Deepgram.** <a href="https://eves-jet.vercel.app">Live</a> · <a href="https://github.com/SHAILESH-RS-UPADHYAY/eves">Code</a> · <a href="work/eves.md">Case study</a>
+Parses JavaScript, TypeScript and Python imports, finds cycles with Tarjan's algorithm and lays the graph out with ELK in a Web Worker. Your code never leaves the browser. **TypeScript, ELK, hand-written SVG.** <a href="https://blueprint-sh.vercel.app">Live</a> · <a href="${ME}/blueprint-sh">Code</a>
 
 <br>
 

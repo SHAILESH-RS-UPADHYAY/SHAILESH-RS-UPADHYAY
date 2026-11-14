@@ -39,7 +39,7 @@ The similarity band belongs to the embedding model. When I changed models I meas
 | **Schedule** | 37 cron runs a day: embed 24, discover 5, scan 4, autopilot 4 |
 | **AI** | Four providers, each a fallback for the others |
 | **Safety** | Read-only Gmail link with the token sealed by AES-256-GCM. Only the verdict on a reply is stored |
-| **Size** | About 34,000 lines and 200 modules, no import cycles, 37 test files |
+| **Size** | About 34,000 lines and 200 modules, no import cycles, 38 test files |
 
 ## What it refuses to do
 
