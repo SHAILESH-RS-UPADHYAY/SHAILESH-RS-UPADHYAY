@@ -76,7 +76,7 @@ Parses JavaScript, TypeScript and Python imports, finds cycles with Tarjan's alg
 
 ${plate('eves', 'work/eves.md', 'EVES: a live meeting moving through the app, from recording to a transcript in Hindi and English, to a written brief, to a prompt ready to paste.')}
 
-A desktop app for long engineering calls. It records the meeting, transcribes it live with speaker labels, and turns it into a brief you can question and prompts you can paste. Everything stays on your machine. **React, TypeScript, Deepgram.** <a href="https://eves-jet.vercel.app">Live</a> · <a href="work/eves.md">Case study</a>
+A desktop app for long engineering calls. It records the meeting, transcribes it live with speaker labels, and turns it into a brief you can question and prompts you can paste. Everything stays on your machine. **React, TypeScript, Deepgram.** <a href="https://eves-jet.vercel.app">Live</a> · <a href="https://github.com/SHAILESH-RS-UPADHYAY/eves">Code</a> · <a href="work/eves.md">Case study</a>
 
 <br>
 

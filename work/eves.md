@@ -40,4 +40,4 @@ Calls that run past two hours pack in decisions, trade-offs and things deliberat
 | **Privacy** | Keys, transcripts and audio stay on your machine. Files that look like secrets are never read into a prompt |
 | **Size** | About 12,900 lines and 110 modules, no import cycles |
 
-<sub><a href="https://eves-jet.vercel.app">See it live</a> · Code goes public with the release. <a href="../README.md">Back to the profile</a></sub>
+<sub><a href="https://github.com/SHAILESH-RS-UPADHYAY/eves">Read the code</a> · <a href="https://eves-jet.vercel.app">Try it live</a> · <a href="../README.md">Back to the profile</a></sub>
