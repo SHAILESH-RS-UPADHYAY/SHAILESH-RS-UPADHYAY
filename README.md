@@ -90,7 +90,7 @@ A desktop app for long engineering calls. It records the meeting, transcribes it
   <img src="https://raw.githubusercontent.com/SHAILESH-RS-UPADHYAY/SHAILESH-RS-UPADHYAY/charts/stack-light.svg" width="100%" alt="Languages by share of bytes across all my repositories, next to lines, modules, imports and cycles measured in each flagship project.">
 </picture>
 
-<sub>These charts are redrawn from GitHub every half hour. <a href="https://shailesh-stats.vercel.app/api/data">The numbers behind them</a>.</sub>
+<sub>These charts are redrawn from GitHub every few minutes. <a href="https://shailesh-stats.vercel.app/api/data">The numbers behind them</a>.</sub>
 
 <br>
 

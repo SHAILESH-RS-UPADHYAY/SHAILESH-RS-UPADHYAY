@@ -1,31 +1,45 @@
-# Redraws the profile charts every half hour and publishes them as plain files on the charts branch.
-# The README shows those files, so a visit is served straight from GitHub and never waits on a render.
-# A run that can't get live numbers fails before publishing, so the last good charts stay up.
+# Keeps the profile charts fresh as plain files on the charts branch, so a visit never waits on a render.
+# GitHub's cron is best-effort and can skip for hours, so one run loops instead: it redraws every 5 minutes for
+# just under the 6 hour job limit, then starts its own successor. The cron is only a watchdog that restarts the
+# loop if it ever stops. A failed redraw publishes nothing, so the last good charts stay up.
 name: Charts
 
 on:
   schedule:
-    - cron: '7,37 * * * *'
+    - cron: '17 * * * *'
   push:
     branches: [main]
   workflow_dispatch:
 
 permissions:
   contents: write
+  actions: write
 
-concurrency: charts
+# A newer run (a push, the watchdog, the successor) replaces the running loop.
+concurrency:
+  group: charts
+  cancel-in-progress: true
 
 jobs:
   draw:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 360
     steps:
       - uses: actions/checkout@v7
-      - run: node stats/publish.mjs "$RUNNER_TEMP/charts"
-      # One orphan commit, force-pushed, so the branch never grows a history.
-      - run: |
-          git switch -q --orphan charts
-          mv "$RUNNER_TEMP"/charts/*.svg .
-          git add *.svg
-          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -qm 'Redraw the charts'
-          git push -qf origin charts
+      - env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          remote="https://x-access-token:$GH_TOKEN@github.com/$GITHUB_REPOSITORY"
+          out="$RUNNER_TEMP/charts"
+          stop=$((SECONDS + 350 * 60)) last= pushed=-9999
+          while [ $SECONDS -lt $stop ]; do
+            rm -rf "$out"
+            # Push when the numbers change, and at least every 30 minutes so "minutes ago" stays honest.
+            if key=$(node stats/publish.mjs "$out" | tail -1) && { [ "$key" != "$last" ] || [ $((SECONDS - pushed)) -ge 1800 ]; }; then
+              ( cd "$out" && git init -q -b charts && git add *.svg \
+                && git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -qm 'Redraw the charts' \
+                && git push -qf "$remote" charts ) && last=$key pushed=$SECONDS && echo "published $key"
+            fi
+            sleep 300
+          done
+          gh workflow run charts.yml --ref main --repo "$GITHUB_REPOSITORY"

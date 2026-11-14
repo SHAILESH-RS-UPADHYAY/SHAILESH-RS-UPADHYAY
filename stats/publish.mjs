@@ -17,4 +17,5 @@ for (const [name, draw] of Object.entries(PLATES)) {
     for (const narrow of [false, true]) writeFileSync(`${out}/${name}-${theme}${narrow ? '-m' : ''}.svg`, draw(vm, { theme, narrow }));
   }
 }
-console.log(`${vm.totals.commits} commits, numbers from ${vm.generatedAt}`);
+// The workflow compares this line between runs to tell whether anything changed.
+console.log(JSON.stringify(vm.totals));

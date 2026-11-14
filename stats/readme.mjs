@@ -2,7 +2,7 @@
 import { writeFileSync } from 'node:fs';
 
 const LIVE = 'https://shailesh-stats.vercel.app';
-// The Charts workflow redraws these every half hour. GitHub serves them as plain files, so a visit never waits on a
+// The Charts workflow redraws these every few minutes. GitHub serves them as plain files, so a visit never waits on a
 // render. Pointing the images at the endpoint instead breaks them: GitHub's image proxy gives up after about 5 s.
 const CHARTS = 'https://raw.githubusercontent.com/SHAILESH-RS-UPADHYAY/SHAILESH-RS-UPADHYAY/charts';
 const ME = 'https://github.com/SHAILESH-RS-UPADHYAY';
@@ -90,7 +90,7 @@ ${picture(svg(CHARTS, 'rhythm'), 'Commits by weekday and hour in India time, wit
 
 ${picture(svg(CHARTS, 'stack'), 'Languages by share of bytes across all my repositories, next to lines, modules, imports and cycles measured in each flagship project.')}
 
-<sub>These charts are redrawn from GitHub every half hour. <a href="${LIVE}/api/data">The numbers behind them</a>.</sub>
+<sub>These charts are redrawn from GitHub every few minutes. <a href="${LIVE}/api/data">The numbers behind them</a>.</sub>
 
 <br>
 
