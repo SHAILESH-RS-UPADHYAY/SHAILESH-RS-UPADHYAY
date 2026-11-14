@@ -30,7 +30,7 @@
   </picture>
 </a>
 
-An AI job engine. It reads 30 job feeds, finds funded startups on its own, checks every posting is real, scores each one against your resume and files the best in a Vault. Near-misses get an honest resume rewrite. The last click stays yours. **Next.js, Supabase, Pinecone.** <a href="https://radar-neon-theta.vercel.app">Live</a> · <a href="work/radar.md">Case study</a>
+An AI job engine. It reads 30 job feeds, finds funded startups on its own, checks every posting is real, scores each one against your resume and files the best in a Vault. Near-misses get an honest resume rewrite. The last click stays yours. **Next.js, Supabase, Pinecone.** <a href="https://radar-neon-theta.vercel.app">Live</a> · <a href="https://github.com/SHAILESH-RS-UPADHYAY/radar">Code</a> · <a href="work/radar.md">Case study</a>
 
 <br>
 
@@ -41,7 +41,7 @@ An AI job engine. It reads 30 job feeds, finds funded startups on its own, check
   </picture>
 </a>
 
-Interview prep built on your real work. It reads your resume, your GitHub, the job post and the take-home, then asks what only you could be asked and checks every answer for sounding human. **FastAPI, Python, Neon, Clerk.** <a href="https://vettly-sigma.vercel.app">Live</a> · <a href="work/vettly.md">Case study</a>
+Interview prep built on your real work. It reads your resume, your GitHub, the job post and the take-home, then asks what only you could be asked and checks every answer for sounding human. **FastAPI, Python, Neon, Clerk.** <a href="https://vettly-sigma.vercel.app">Live</a> · <a href="https://github.com/SHAILESH-RS-UPADHYAY/vettly">Code</a> · <a href="work/vettly.md">Case study</a>
 
 <br>
 
@@ -63,7 +63,7 @@ Parses JavaScript, TypeScript and Python imports, finds cycles with Tarjan's alg
   </picture>
 </a>
 
-A desktop app for long engineering calls. It records the meeting, transcribes it live with speaker labels, and turns it into a brief you can question and prompts you can paste. Everything stays on your machine. **React, TypeScript, Deepgram.** <a href="work/eves.md">Case study</a>
+A desktop app for long engineering calls. It records the meeting, transcribes it live with speaker labels, and turns it into a brief you can question and prompts you can paste. Everything stays on your machine. **React, TypeScript, Deepgram.** <a href="https://eves-jet.vercel.app">Live</a> · <a href="work/eves.md">Case study</a>
 
 <br>
 

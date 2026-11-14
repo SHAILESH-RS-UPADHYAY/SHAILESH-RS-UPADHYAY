@@ -45,4 +45,4 @@ The similarity band belongs to the embedding model. When I changed models I meas
 
 No LinkedIn or Indeed scraping, no fake browsers or rotating IPs, no CAPTCHA solving, and your logins are never used. The final submit on every application is yours.
 
-<sub>The code is private. Happy to walk through it. <a href="../README.md">Back to the profile</a></sub>
+<sub><a href="https://github.com/SHAILESH-RS-UPADHYAY/radar">Read the code</a> · <a href="https://radar-neon-theta.vercel.app">Try it live</a> · <a href="../README.md">Back to the profile</a></sub>

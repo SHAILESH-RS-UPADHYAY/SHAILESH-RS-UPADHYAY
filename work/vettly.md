@@ -33,4 +33,4 @@ Generic prep gives you generic answers. Vettly reads your resume, your public Gi
 | **Tested** | Two users never see each other's data, bad tokens are refused, the daily AI allowance holds |
 | **Size** | About 13,600 lines across 42 modules |
 
-<sub>The code is private. Happy to walk through it. <a href="../README.md">Back to the profile</a></sub>
+<sub><a href="https://github.com/SHAILESH-RS-UPADHYAY/vettly">Read the code</a> · <a href="https://vettly-sigma.vercel.app">Try it live</a> · <a href="../README.md">Back to the profile</a></sub>
