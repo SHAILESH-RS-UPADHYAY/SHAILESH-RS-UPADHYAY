@@ -2,6 +2,9 @@
 import { writeFileSync } from 'node:fs';
 
 const LIVE = 'https://shailesh-stats.vercel.app';
+// The Charts workflow redraws these every half hour. GitHub serves them as plain files, so a visit never waits on a
+// render. Pointing the images at the endpoint instead breaks them: GitHub's image proxy gives up after about 5 s.
+const CHARTS = 'https://raw.githubusercontent.com/SHAILESH-RS-UPADHYAY/SHAILESH-RS-UPADHYAY/charts';
 const ME = 'https://github.com/SHAILESH-RS-UPADHYAY';
 
 const picture = (src, alt) => `<picture>
@@ -11,8 +14,7 @@ const picture = (src, alt) => `<picture>
   <img src="${src('light', false)}" width="100%" alt="${alt}">
 </picture>`;
 
-const local = (dir, name) => (theme, narrow) => `${dir}/${name}-${theme}${narrow ? '-m' : ''}.svg`;
-const live = (name) => (theme, narrow) => `${LIVE}/api/plate?name=${name}&amp;theme=${theme}${narrow ? '&amp;w=m' : ''}`;
+const svg = (dir, name) => (theme, narrow) => `${dir}/${name}-${theme}${narrow ? '-m' : ''}.svg`;
 
 // Flagship plates live in their own product's world, so they don't change with the page theme.
 const plate = (name, href, alt) => `<a href="${href}">
@@ -41,7 +43,7 @@ const also = [
   ['devine-cdc.png', 'Devine CDC', 'The site for a child development centre in Gurugram.', [['Live', 'https://devinecdc.in'], ['Code', `${ME}/devine-cdc`]]],
 ];
 
-const readme = `${picture(local('assets', 'header'), 'Shailesh Upadhyay. AI engineer building LLM systems, RAG and agents, and the full-stack products around them. CS grad (AI/ML).')}
+const readme = `${picture(svg('assets', 'header'), 'Shailesh Upadhyay. AI engineer building LLM systems, RAG and agents, and the full-stack products around them. CS grad (AI/ML).')}
 
 <a href="https://shailesh-ai.codes">
 <picture>
@@ -50,7 +52,7 @@ const readme = `${picture(local('assets', 'header'), 'Shailesh Upadhyay. AI engi
 </picture>
 </a>
 
-${picture(live('pulse'), 'My total commits and how recently the last one landed, contributions in the last 12 months, my streak, and a calendar of every day, drawn live from GitHub.')}
+${picture(svg(CHARTS, 'pulse'), 'My total commits and how recently the last one landed, contributions in the last 12 months, my streak, and a calendar of every day, drawn from GitHub.')}
 
 <br>
 
@@ -82,13 +84,13 @@ A desktop app for long engineering calls. It records the meeting, transcribes it
 
 ### By the numbers
 
-${picture(live('projects'), 'Commits per week for each project since my first active week, with the four flagship projects highlighted and a total beside each.')}
+${picture(svg(CHARTS, 'projects'), 'Commits per week for each project since my first active week, with the four flagship projects highlighted and a total beside each.')}
 
-${picture(live('rhythm'), 'Commits by weekday and hour in India time, with the busiest stretch of the day highlighted and a total for each weekday.')}
+${picture(svg(CHARTS, 'rhythm'), 'Commits by weekday and hour in India time, with the busiest stretch of the day highlighted and a total for each weekday.')}
 
-${picture(live('stack'), 'Languages by share of bytes across all my repositories, next to lines, modules, imports and cycles measured in each flagship project.')}
+${picture(svg(CHARTS, 'stack'), 'Languages by share of bytes across all my repositories, next to lines, modules, imports and cycles measured in each flagship project.')}
 
-<sub>These charts are drawn from GitHub when the page loads, so a new commit shows up within a minute. <a href="${LIVE}/api/data">The numbers behind them</a>.</sub>
+<sub>These charts are redrawn from GitHub every half hour. <a href="${LIVE}/api/data">The numbers behind them</a>.</sub>
 
 <br>
 

@@ -13,10 +13,10 @@
 </a>
 
 <picture>
-  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="https://shailesh-stats.vercel.app/api/plate?name=pulse&amp;theme=dark&amp;w=m">
-  <source media="(max-width: 600px)" srcset="https://shailesh-stats.vercel.app/api/plate?name=pulse&amp;theme=light&amp;w=m">
-  <source media="(prefers-color-scheme: dark)" srcset="https://shailesh-stats.vercel.app/api/plate?name=pulse&amp;theme=dark">
-  <img src="https://shailesh-stats.vercel.app/api/plate?name=pulse&amp;theme=light" width="100%" alt="My total commits and how recently the last one landed, contributions in the last 12 months, my streak, and a calendar of every day, drawn live from GitHub.">
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/SHAILESH-RS-UPADHYAY/SHAILESH-RS-UPADHYAY/charts/pulse-dark-m.svg">
+  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/SHAILESH-RS-UPADHYAY/SHAILESH-RS-UPADHYAY/charts/pulse-light-m.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/SHAILESH-RS-UPADHYAY/SHAILESH-RS-UPADHYAY/charts/pulse-dark.svg">
+  <img src="https://raw.githubusercontent.com/SHAILESH-RS-UPADHYAY/SHAILESH-RS-UPADHYAY/charts/pulse-light.svg" width="100%" alt="My total commits and how recently the last one landed, contributions in the last 12 months, my streak, and a calendar of every day, drawn from GitHub.">
 </picture>
 
 <br>
@@ -70,27 +70,27 @@ A desktop app for long engineering calls. It records the meeting, transcribes it
 ### By the numbers
 
 <picture>
-  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="https://shailesh-stats.vercel.app/api/plate?name=projects&amp;theme=dark&amp;w=m">
-  <source media="(max-width: 600px)" srcset="https://shailesh-stats.vercel.app/api/plate?name=projects&amp;theme=light&amp;w=m">
-  <source media="(prefers-color-scheme: dark)" srcset="https://shailesh-stats.vercel.app/api/plate?name=projects&amp;theme=dark">
-  <img src="https://shailesh-stats.vercel.app/api/plate?name=projects&amp;theme=light" width="100%" alt="Commits per week for each project since my first active week, with the four flagship projects highlighted and a total beside each.">
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/SHAILESH-RS-UPADHYAY/SHAILESH-RS-UPADHYAY/charts/projects-dark-m.svg">
+  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/SHAILESH-RS-UPADHYAY/SHAILESH-RS-UPADHYAY/charts/projects-light-m.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/SHAILESH-RS-UPADHYAY/SHAILESH-RS-UPADHYAY/charts/projects-dark.svg">
+  <img src="https://raw.githubusercontent.com/SHAILESH-RS-UPADHYAY/SHAILESH-RS-UPADHYAY/charts/projects-light.svg" width="100%" alt="Commits per week for each project since my first active week, with the four flagship projects highlighted and a total beside each.">
 </picture>
 
 <picture>
-  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="https://shailesh-stats.vercel.app/api/plate?name=rhythm&amp;theme=dark&amp;w=m">
-  <source media="(max-width: 600px)" srcset="https://shailesh-stats.vercel.app/api/plate?name=rhythm&amp;theme=light&amp;w=m">
-  <source media="(prefers-color-scheme: dark)" srcset="https://shailesh-stats.vercel.app/api/plate?name=rhythm&amp;theme=dark">
-  <img src="https://shailesh-stats.vercel.app/api/plate?name=rhythm&amp;theme=light" width="100%" alt="Commits by weekday and hour in India time, with the busiest stretch of the day highlighted and a total for each weekday.">
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/SHAILESH-RS-UPADHYAY/SHAILESH-RS-UPADHYAY/charts/rhythm-dark-m.svg">
+  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/SHAILESH-RS-UPADHYAY/SHAILESH-RS-UPADHYAY/charts/rhythm-light-m.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/SHAILESH-RS-UPADHYAY/SHAILESH-RS-UPADHYAY/charts/rhythm-dark.svg">
+  <img src="https://raw.githubusercontent.com/SHAILESH-RS-UPADHYAY/SHAILESH-RS-UPADHYAY/charts/rhythm-light.svg" width="100%" alt="Commits by weekday and hour in India time, with the busiest stretch of the day highlighted and a total for each weekday.">
 </picture>
 
 <picture>
-  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="https://shailesh-stats.vercel.app/api/plate?name=stack&amp;theme=dark&amp;w=m">
-  <source media="(max-width: 600px)" srcset="https://shailesh-stats.vercel.app/api/plate?name=stack&amp;theme=light&amp;w=m">
-  <source media="(prefers-color-scheme: dark)" srcset="https://shailesh-stats.vercel.app/api/plate?name=stack&amp;theme=dark">
-  <img src="https://shailesh-stats.vercel.app/api/plate?name=stack&amp;theme=light" width="100%" alt="Languages by share of bytes across all my repositories, next to lines, modules, imports and cycles measured in each flagship project.">
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/SHAILESH-RS-UPADHYAY/SHAILESH-RS-UPADHYAY/charts/stack-dark-m.svg">
+  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/SHAILESH-RS-UPADHYAY/SHAILESH-RS-UPADHYAY/charts/stack-light-m.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/SHAILESH-RS-UPADHYAY/SHAILESH-RS-UPADHYAY/charts/stack-dark.svg">
+  <img src="https://raw.githubusercontent.com/SHAILESH-RS-UPADHYAY/SHAILESH-RS-UPADHYAY/charts/stack-light.svg" width="100%" alt="Languages by share of bytes across all my repositories, next to lines, modules, imports and cycles measured in each flagship project.">
 </picture>
 
-<sub>These charts are drawn from GitHub when the page loads, so a new commit shows up within a minute. <a href="https://shailesh-stats.vercel.app/api/data">The numbers behind them</a>.</sub>
+<sub>These charts are redrawn from GitHub every half hour. <a href="https://shailesh-stats.vercel.app/api/data">The numbers behind them</a>.</sub>
 
 <br>
 
