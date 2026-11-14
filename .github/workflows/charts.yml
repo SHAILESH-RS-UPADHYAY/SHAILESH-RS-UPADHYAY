@@ -1,0 +1,31 @@
+# Redraws the profile charts every half hour and publishes them as plain files on the charts branch.
+# The README shows those files, so a visit is served straight from GitHub and never waits on a render.
+# A run that can't get live numbers fails before publishing, so the last good charts stay up.
+name: Charts
+
+on:
+  schedule:
+    - cron: '7,37 * * * *'
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency: charts
+
+jobs:
+  draw:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+      - run: node stats/publish.mjs "$RUNNER_TEMP/charts"
+      # One orphan commit, force-pushed, so the branch never grows a history.
+      - run: |
+          git switch -q --orphan charts
+          mv "$RUNNER_TEMP"/charts/*.svg .
+          git add *.svg
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -qm 'Redraw the charts'
+          git push -qf origin charts

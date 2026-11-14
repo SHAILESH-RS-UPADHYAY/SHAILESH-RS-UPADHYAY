@@ -23,9 +23,9 @@ export function current() {
   return vm;
 }
 
-// Vercel's CDN holds a render for a minute, then keeps serving it instantly while it fetches a fresh one, so
-// GitHub's image proxy never waits on a cold start and gives up. The browser and GitHub's image proxy are told not to keep it at all,
-// which is what makes a new commit show up on the next page load.
+// Vercel's CDN holds a render for a minute and serves it stale while it refreshes, but only while the region still has
+// a copy. A quiet night evicts it and the next request waits on GitHub, so the README doesn't embed these endpoints: it
+// shows the files the Charts workflow publishes. Browsers are told not to keep a render at all.
 export const headers = (type) => ({
   'content-type': type,
   'cache-control': 'no-cache, no-store, must-revalidate, max-age=0',
