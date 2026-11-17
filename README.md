@@ -100,7 +100,7 @@ Parses JavaScript, TypeScript and Python imports, finds cycles with Tarjan's alg
 
 <img align="left" src="assets/logos/devine-cdc.png" width="44" height="44" hspace="12" alt="">
 <b>Devine CDC</b><br>
-The site for a child development centre in Gurugram, and the portal its families, therapists and admins use. The portal demo runs on made-up data. <a href="https://devinecdc.in">Site</a> · <a href="https://divine-cdc-dashboard-o65s.vercel.app/login">Portal demo</a> · <a href="https://github.com/SHAILESH-RS-UPADHYAY/devine-cdc">Code</a>
+The site for a child development centre in Gurugram, and the portal its families, therapists and admins use. The portal demo runs on made-up data. <a href="https://devinecdc.in">Site</a> · <a href="https://demo.devinecdc.in">Portal demo</a> · <a href="https://github.com/SHAILESH-RS-UPADHYAY/devine-cdc">Code</a>
 <br clear="left"><br>
 
 <img align="left" src="assets/logos/autopsy.svg" width="44" height="44" hspace="12" alt="">

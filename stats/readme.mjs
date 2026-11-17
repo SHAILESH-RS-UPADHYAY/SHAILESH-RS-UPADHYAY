@@ -30,7 +30,7 @@ ${text} ${links.map(([label, href]) => `<a href="${href}">${label}</a>`).join(' 
 <br clear="left"><br>`;
 
 const also = [
-  ['devine-cdc.png', 'Devine CDC', 'The site for a child development centre in Gurugram, and the portal its families, therapists and admins use. The portal demo runs on made-up data.', [['Site', 'https://devinecdc.in'], ['Portal demo', 'https://divine-cdc-dashboard-o65s.vercel.app/login'], ['Code', `${ME}/devine-cdc`]]],
+  ['devine-cdc.png', 'Devine CDC', 'The site for a child development centre in Gurugram, and the portal its families, therapists and admins use. The portal demo runs on made-up data.', [['Site', 'https://devinecdc.in'], ['Portal demo', 'https://demo.devinecdc.in'], ['Code', `${ME}/devine-cdc`]]],
   ['autopsy.svg', 'Autopsy', 'Paste a URL, get an evidence-backed teardown of how the site is built.', [['Live', 'https://autopsy-casefile.vercel.app'], ['Code', `${ME}/autopsy`]]],
   ['tether.svg', 'Tether', 'Carries a chat from one AI assistant to another as a Markdown capsule.', [['Live', 'https://tether-capsule.vercel.app'], ['Code', `${ME}/tether`]]],
   ['panna.svg', 'Panna', 'A local RAG chatbot that shows its source and refuses when the document does not say it.', [['Code', `${ME}/panna-rag`]]],
